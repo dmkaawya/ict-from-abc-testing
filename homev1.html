@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT From ABC | Ravindu Bandaranayake - Sri Lanka's #1 A/L ICT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 400:'#f87171',500:'#ef4444',600:'#dc2626',700:'#b91c1c',800:'#991b1b',900:'#7f1d1d' }
+                    },
+                    fontFamily: { inter: ['Inter','sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        *{font-family:'Inter',sans-serif}
+        html{scroll-behavior:smooth}
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:#0a0a0a}
+        ::-webkit-scrollbar-thumb{background:#dc2626;border-radius:4px}
+        .gradient-text{background:linear-gradient(135deg,#ef4444,#dc2626,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-text-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-bg{background:radial-gradient(ellipse at top,rgba(220,38,38,0.12),transparent 60%)}
+        .card-hover{transition:all .3s cubic-bezier(.4,0,.2,1)}
+        .card-hover:hover{transform:translateY(-6px)}
+        .glow-red{box-shadow:0 0 40px rgba(220,38,38,0.25)}
+        .nav-blur{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        .float-anim{animation:float 3s ease-in-out infinite}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+        .pulse-dot{animation:pulse-dot 2s ease-in-out infinite}
+        @keyframes slideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        .slide-in{animation:slideIn .6s ease-out forwards}
+        .slide-d1{animation-delay:.1s;opacity:0}
+        .slide-d2{animation-delay:.2s;opacity:0}
+        .mobile-menu{transform:translateX(100%);transition:transform .3s ease}
+        .mobile-menu.active{transform:translateX(0)}
+        .tab-content{display:none}.tab-content.active{display:block}
+        input:focus,textarea:focus,select:focus{outline:none}
+        .pie-chart{
+            width:260px;height:260px;border-radius:50%;position:relative;
+            background:conic-gradient(#dc2626 0% 7.2%,#f87171 7.2% 29%,#fbbf24 29% 64.5%,#6b7280 64.5% 100%);
+        }
+        .pie-chart::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:140px;height:140px;border-radius:50%;background:#111111}
+        @keyframes rotateGlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .rotate-glow{animation:rotateGlow 8s linear infinite}
+        @keyframes countUp{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
+        .count-anim{animation:countUp .8s ease-out forwards}
+        .shimmer{background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);background-size:200% 100%;animation:shimmer 4s infinite}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+    </style>
+</head>
+<body class="bg-[#0a0a0a] dark:bg-[#0a0a0a] text-white dark:text-white transition-colors duration-300">
+
+<!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#0a0a0a]/80 dark:bg-[#0a0a0a]/80 border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="#home" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-bold text-white text-lg group-hover:bg-brand-500 transition-colors">A</div>
+                <div>
+                    <span class="text-lg font-bold text-white">ict<span class="text-brand-500">from</span>abc</span>
+                    <div class="text-[10px] text-neutral-500 -mt-1 tracking-wider">RAVINDU SIR • A/L ICT</div>
+                </div>
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#home" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Home</a>
+                <a href="#about" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">About</a>
+                <a href="#results" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Results</a>
+                <a href="#features" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Features</a>
+                <a href="#saga" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">SAGA</a>
+                <a href="#resources" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Resources</a>
+                <a href="#contact" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
+                <a href="#login" class="ml-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-all hover:scale-105 active:scale-95">Login</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:0714555513" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-xl text-brand-400 text-sm font-semibold hover:bg-brand-600/20 transition-all">
+                    <iconify-icon icon="lucide:phone" width="16"></iconify-icon> 071 455 5513
+                </a>
+                <button id="themeToggle" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all border border-white/10">
+                    <iconify-icon id="themeIcon" icon="lucide:sun" width="18" class="text-yellow-400"></iconify-icon>
+                </button>
+                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all border border-white/10">
+                    <iconify-icon icon="lucide:menu" width="20"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 max-w-[85vw] h-full z-[60] bg-[#111111] border-l border-white/10 p-6">
+    <div class="flex items-center justify-between mb-8">
+        <span class="text-lg font-bold">ict<span class="text-brand-500">from</span>abc</span>
+        <button id="mobileMenuClose" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center"><iconify-icon icon="lucide:x" width="20"></iconify-icon></button>
+    </div>
+    <div class="flex flex-col gap-2">
+        <a href="#home" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">🏠 Home</a>
+        <a href="#about" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">🎤 About Sir</a>
+        <a href="#results" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">🏆 2025 Results</a>
+        <a href="#features" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">✨ Features</a>
+        <a href="#saga" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">🎯 SAGA Event</a>
+        <a href="#resources" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">📚 Resources</a>
+        <a href="#contact" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl transition-all font-medium">📞 Contact</a>
+        <a href="tel:0714555513" class="mobile-nav mt-2 px-4 py-3 bg-brand-600/10 border border-brand-600/20 text-brand-400 rounded-xl font-semibold text-center">📞 071 455 5513</a>
+        <a href="#login" class="mobile-nav px-4 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-semibold text-center">🔐 Login</a>
+    </div>
+</div>
+<div id="mobileOverlay" class="fixed inset-0 bg-black/60 z-[55] hidden"></div>
+
+<!-- ==================== HERO ==================== -->
+<section id="home" class="relative min-h-screen flex items-center hero-bg pt-20 overflow-hidden">
+    <div class="absolute top-20 right-10 w-72 h-72 bg-brand-600/10 rounded-full blur-[100px]"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-brand-800/8 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-brand-600/5 rounded-full rotate-glow"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div class="slide-in">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-full mb-5">
+                    <span class="w-2 h-2 bg-brand-500 rounded-full pulse-dot"></span>
+                    <span class="text-sm font-medium text-brand-400">Since 2017 • Sri Lanka's #1 A/L ICT Class</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-3">
+                    <span class="text-white">RAVINDU</span><br>
+                    <span class="gradient-text">SIR</span><br>
+                    <span class="text-neutral-400 text-2xl sm:text-3xl lg:text-4xl font-light tracking-wide">RAVINDU BANDARANAYAKE</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-300 font-semibold mb-2">THE MOST TRUSTED NAME IN A/L ICT EDUCATION</p>
+                <p class="text-sm sm:text-base text-yellow-400 font-semibold mb-4">🏆 SRI LANKA'S LARGEST A/B PASS ICT CLASS</p>
+                <p class="text-base text-neutral-400 mb-6 max-w-lg leading-relaxed">
+                    Join <span class="text-white font-semibold">15,000+ students</span> who trust Ravindu Sir for A/L ICT excellence. Premium 4K quality education with unlimited recordings, 24/7 hotline support, and world-class results since 2017.
+                </p>
+                <!-- Quote -->
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-lg">
+                    <div class="flex items-start gap-3">
+                        <iconify-icon icon="lucide:quote" width="24" class="text-brand-500 mt-1 flex-shrink-0"></iconify-icon>
+                        <p class="text-neutral-300 italic text-sm leading-relaxed">"Our hair might be messy but our head is clear"</p>
+                    </div>
+                    <p class="text-right text-xs text-neutral-500 mt-2">— Ravindu Bandaranayake</p>
+                </div>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <a href="#login" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 glow-red flex items-center gap-2">
+                        <iconify-icon icon="lucide:play" width="20"></iconify-icon> Start Learning
+                    </a>
+                    <a href="#results" class="px-8 py-4 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 font-semibold rounded-xl transition-all border border-yellow-500/20 hover:border-yellow-500/40 flex items-center gap-2">
+                        <iconify-icon icon="lucide:trophy" width="20"></iconify-icon> 2025 Results
+                    </a>
+                    <a href="tel:0714555513" class="px-8 py-4 bg-green-500/10 hover:bg-green-500/20 text-green-400 font-semibold rounded-xl transition-all border border-green-500/20 hover:border-green-500/40 flex items-center gap-2">
+                        <iconify-icon icon="lucide:phone-call" width="20"></iconify-icon> Hotline
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center">
+                        <div class="text-xl font-bold text-white">15K+</div>
+                        <div class="text-[10px] text-neutral-500">Students</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center">
+                        <div class="text-xl font-bold text-brand-400">1,300+</div>
+                        <div class="text-[10px] text-neutral-500">A/B Pass</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center">
+                        <div class="text-xl font-bold text-yellow-400">2nd</div>
+                        <div class="text-[10px] text-neutral-500">Island 1st</div>
+                    </div>
+                    <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center">
+                        <div class="text-xl font-bold text-green-400">24/7</div>
+                        <div class="text-[10px] text-neutral-500">Hotline</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Visual -->
+            <div class="slide-in slide-d2 relative flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-brand-600/20 rounded-2xl rotate-12"></div>
+                    <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-yellow-500/10 rounded-3xl -rotate-12"></div>
+                    <div class="relative bg-[#111111] rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+                        <div class="relative h-80 overflow-hidden">
+                            <img src="https://picsum.photos/seed/ravindu-ict-teacher/500/400.jpg" alt="Ravindu Sir" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/30 to-transparent"></div>
+                            <div class="absolute top-4 right-4 flex gap-2">
+                                <span class="px-3 py-1 bg-brand-600/90 backdrop-blur-sm rounded-full text-xs font-bold">4K QUALITY</span>
+                                <span class="px-3 py-1 bg-yellow-500/90 text-black backdrop-blur-sm rounded-full text-xs font-bold">SINCE 2017</span>
+                            </div>
+                            <div class="absolute top-4 left-4 w-10 h-10 bg-brand-600/80 backdrop-blur-sm rounded-full flex items-center justify-center">
+                                <iconify-icon icon="lucide:mic" width="20" class="text-white"></iconify-icon>
+                            </div>
+                        </div>
+                        <div class="p-6 -mt-10 relative">
+                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-3">
+                                <iconify-icon icon="lucide:crown" width="14" class="text-yellow-400"></iconify-icon>
+                                <span class="text-xs font-semibold text-yellow-400">SRI LANKA'S #1</span>
+                            </div>
+                            <h3 class="text-2xl font-bold">RAVINDU SIR</h3>
+                            <p class="text-sm text-neutral-400 mb-1">Ravindu Bandaranayake</p>
+                            <p class="text-sm text-brand-400 font-medium mb-3">A/L ICT Education Since 2017</p>
+                            <p class="text-xs text-neutral-500">O/L Pass • A/L Maths • BCS (The Chartered Institute for IT)</p>
+                        </div>
+                    </div>
+                    <div class="absolute -top-6 -left-6 bg-brand-600 rounded-2xl px-4 py-3 shadow-lg float-anim glow-red">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:users" width="18" class="text-white"></iconify-icon>
+                            <div><div class="text-sm font-bold text-white">15,000+</div><div class="text-[10px] text-red-200">Students</div></div>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-[#1a1a1a] rounded-2xl px-4 py-3 shadow-lg border border-white/10 float-anim" style="animation-delay:1s">
+                        <div class="flex items-center gap-2">
+                            <iconify-icon icon="lucide:phone-call" width="18" class="text-green-400"></iconify-icon>
+                            <div><div class="text-sm font-bold text-white">24/7</div><div class="text-[10px] text-neutral-400">Hotline</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== STATS BAR ==================== -->
+<section class="relative py-16 bg-[#111111] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-5 gap-6">
+            <div class="text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold text-white mb-1">15,000+</div>
+                <div class="text-sm text-neutral-500">Total Students</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold text-brand-400 mb-1">1,300+</div>
+                <div class="text-sm text-neutral-500">A/B Pass 2025</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold text-yellow-400 mb-1">2</div>
+                <div class="text-sm text-neutral-500">Island 1st</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl sm:text-4xl font-extrabold text-green-400 mb-1">8+</div>
+                <div class="text-sm text-neutral-500">Years of Service</div>
+            </div>
+            <div class="text-center col-span-2 lg:col-span-1">
+                <div class="text-3xl sm:text-4xl font-extrabold text-purple-400 mb-1">24/7</div>
+                <div class="text-sm text-neutral-500">Hotline Support</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== ABOUT ==================== -->
+<section id="about" class="relative py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <div class="relative rounded-3xl overflow-hidden border border-white/10">
+                    <img src="https://picsum.photos/seed/ravindu-classroom/600/500.jpg" alt="Ravindu Sir Teaching" class="w-full h-[500px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6">
+                        <div class="bg-[#0a0a0a]/90 backdrop-blur-sm rounded-2xl p-5 border border-white/10">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:award" width="24" class="text-white"></iconify-icon></div>
+                                <div><div class="text-lg font-bold">Teaching Since 2017</div><div class="text-sm text-neutral-400">8+ Years of Excellence</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">About Ravindu Sir</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-6">Ravindu <span class="gradient-text">Bandaranayake</span></h2>
+                <p class="text-neutral-400 leading-relaxed mb-6">Ravindu Sir is Sri Lanka's most trusted A/L ICT educator, teaching since 2017. With a passion for making ICT education accessible and world-class, he has built the country's largest A/B pass achieving ICT class with 15,000+ students.</p>
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div>
+                        <span class="text-neutral-300">O/L Pass & A/L Maths Stream</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div>
+                        <span class="text-neutral-300">Wayamba Faculty of Applied Science (Reading)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div>
+                        <span class="text-neutral-300">SLIIT Software Engineering (Reading)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div>
+                        <span class="text-neutral-300">BCS — The Chartered Institute for IT</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div>
+                        <span class="text-neutral-300">Teaches in <span class="text-white font-semibold">English & Sinhala</span> — both together, not separate</span>
+                    </div>
+                </div>
+                <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+                    <p class="text-neutral-300 italic text-sm">"Our hair might be messy but our head is clear"</p>
+                    <p class="text-xs text-neutral-500 mt-2">— Ravindu Bandaranayake</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 2025 RESULTS ==================== -->
+<section id="results" class="relative py-24 bg-[#111111]">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-4">
+                <iconify-icon icon="lucide:trophy" width="16" class="text-yellow-400"></iconify-icon>
+                <span class="text-sm font-semibold text-yellow-400">Outstanding Results</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">2025 A/L ICT <span class="gradient-text-gold">Exam Results</span></h2>
+            <p class="text-neutral-400 max-w-2xl mx-auto">Sri Lanka's largest A/B pass ICT class — 1,300+ A/B passes out of 4,500 total students</p>
+        </div>
+
+        <!-- Island & District Ranks -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-yellow-500/20 text-center">
+                <div class="text-3xl font-black text-yellow-400 mb-1">2</div>
+                <div class="text-sm text-neutral-400">Island 1st</div>
+                <div class="text-xs text-neutral-600 mt-1">Including BST + Maths+ICT</div>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-brand-600/20 text-center">
+                <div class="text-3xl font-black text-brand-400 mb-1">8</div>
+                <div class="text-sm text-neutral-400">Island Top 10</div>
+                <div class="text-xs text-neutral-600 mt-1">1st×2, 2nd, 3rd, 5th×2, 8th, 9th</div>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-green-500/20 text-center">
+                <div class="text-3xl font-black text-green-400 mb-1">13</div>
+                <div class="text-sm text-neutral-400">District 1st</div>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-blue-500/20 text-center">
+                <div class="text-3xl font-black text-blue-400 mb-1">11</div>
+                <div class="text-sm text-neutral-400">District 2nd</div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+            <!-- Pie Chart -->
+            <div class="flex flex-col items-center">
+                <div class="relative mb-6">
+                    <div class="pie-chart"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
+                        <div class="text-2xl font-extrabold text-white">4,500</div>
+                        <div class="text-xs text-neutral-400">Total</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 text-xs">
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#dc2626]"></span>A Pass</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#f87171]"></span>B Pass</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#fbbf24]"></span>C/S Pass</span>
+                    <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-[#6b7280]"></span>F</span>
+                </div>
+            </div>
+
+            <!-- Grade Breakdown -->
+            <div class="space-y-4">
+                <div class="bg-[#0a0a0a] rounded-2xl p-5 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-3"><div class="w-4 h-4 rounded-full bg-[#dc2626]"></div><span class="font-semibold">A Pass</span></div>
+                        <div class="text-right"><span class="text-brand-400 font-bold">324</span><span class="text-neutral-500 text-xs ml-2">(7.2%)</span></div>
+                    </div>
+                    <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#dc2626] rounded-full" style="width:7.2%"></div></div>
+                    <div class="flex justify-between text-xs text-neutral-500 mt-1"><span>Our class: 7%</span><span>All island: 3.7%</span></div>
+                </div>
+                <div class="bg-[#0a0a0a] rounded-2xl p-5 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-3"><div class="w-4 h-4 rounded-full bg-[#f87171]"></div><span class="font-semibold">B Pass</span></div>
+                        <div class="text-right"><span class="text-red-300 font-bold">980</span><span class="text-neutral-500 text-xs ml-2">(21.8%)</span></div>
+                    </div>
+                    <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#f87171] rounded-full" style="width:21.8%"></div></div>
+                    <div class="flex justify-between text-xs text-neutral-500 mt-1"><span>Our class: 21%</span><span>All island: 10%</span></div>
+                </div>
+                <div class="bg-[#0a0a0a] rounded-2xl p-5 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-3"><div class="w-4 h-4 rounded-full bg-[#fbbf24]"></div><span class="font-semibold">C/S Pass</span></div>
+                        <div class="text-right"><span class="text-yellow-400 font-bold">1,596</span><span class="text-neutral-500 text-xs ml-2">(35.5%)</span></div>
+                    </div>
+                    <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#fbbf24] rounded-full" style="width:35.5%"></div></div>
+                </div>
+                <div class="bg-[#0a0a0a] rounded-2xl p-5 border border-white/5">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-3"><div class="w-4 h-4 rounded-full bg-[#6b7280]"></div><span class="font-semibold">F</span></div>
+                        <div class="text-right"><span class="text-neutral-400 font-bold">1,600</span><span class="text-neutral-500 text-xs ml-2">(35.5%)</span></div>
+                    </div>
+                    <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#6b7280] rounded-full" style="width:35.5%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rank Highlights -->
+        <div class="grid sm:grid-cols-3 gap-4">
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-brand-600/20 text-center shimmer">
+                <iconify-icon icon="lucide:map-pin" width="28" class="text-brand-400 mb-2"></iconify-icon>
+                <div class="text-2xl font-bold text-white mb-1">104</div>
+                <div class="text-sm text-neutral-400">Students in District Top 10</div>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-yellow-500/20 text-center shimmer">
+                <iconify-icon icon="lucide:medal" width="28" class="text-yellow-400 mb-2"></iconify-icon>
+                <div class="text-2xl font-bold text-white mb-1">605</div>
+                <div class="text-sm text-neutral-400">Students in District Top 100</div>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-green-500/20 text-center shimmer">
+                <iconify-icon icon="lucide:globe" width="28" class="text-green-400 mb-2"></iconify-icon>
+                <div class="text-2xl font-bold text-white mb-1">54</div>
+                <div class="text-sm text-neutral-400">Students in Island Top 100</div>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-brand-600/5 border border-brand-600/20 rounded-2xl p-6 text-center">
+            <p class="text-brand-300 font-semibold">🏆 Island 1st student received a full scholarship to the world's best university — worth 80 Lakh, completely free</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CLASS QUALITY & FEATURES ==================== -->
+<section id="features" class="relative py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Why Choose Us</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">World-Class <span class="gradient-text">Class Quality</span></h2>
+        </div>
+
+        <!-- Class Quality Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-brand-600/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-600/20 transition-colors">
+                    <iconify-icon icon="lucide:monitor-play" width="28" class="text-brand-500"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">4K/8K Video Quality</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Crystal clear video & sound with iPhone 17 camera, professional lighting system. No quality drops — ever.</p>
+                <div class="mt-4 px-3 py-1.5 bg-brand-600/10 rounded-lg inline-block"><span class="text-xs font-semibold text-brand-400">8K MAX • 4× SPEED • CAST TO TV</span></div>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-yellow-500/20 transition-colors">
+                    <iconify-icon icon="lucide:book-open" width="28" class="text-yellow-400"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">A2Z Complete Teaching</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Not just for exams — for life. Deep ICT knowledge that goes beyond the syllabus. Every topic covered thoroughly.</p>
+                <div class="mt-4 px-3 py-1.5 bg-yellow-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-yellow-400">ENGLISH & SINHALA TOGETHER</span></div>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-green-500/20 transition-colors">
+                    <iconify-icon icon="lucide:clock" width="28" class="text-green-400"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Extended Class Hours</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Theory 2hrs (goes 3hrs), Revision 4hrs (goes 5hrs), Paper class 2-10hrs. Syllabus completed 1-2 months before exam.</p>
+                <div class="mt-4 px-3 py-1.5 bg-green-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-green-400">MISSED? WE COVER IT</span></div>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-purple-500/20 transition-colors">
+                    <iconify-icon icon="lucide:infinity" width="28" class="text-purple-400"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Unlimited Recordings</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Access all recordings anytime — even after the exam. No limits. Free limited recordings on YouTube too.</p>
+                <div class="mt-4 px-3 py-1.5 bg-purple-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-purple-400">NEVER EXPIRES</span></div>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-brand-600/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-brand-600/20 transition-colors">
+                    <iconify-icon icon="lucide:presentation" width="28" class="text-brand-400"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Smart Board + Whiteboard</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Organized whiteboard teaching + smart board paper classes + real screen-share practicals. No watermarks on screen.</p>
+                <div class="mt-4 px-3 py-1.5 bg-brand-600/10 rounded-lg inline-block"><span class="text-xs font-semibold text-brand-400">PROFESSIONAL SETUP</span></div>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30 group">
+                <div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-cyan-500/20 transition-colors">
+                    <iconify-icon icon="lucide:sparkles" width="28" class="text-cyan-400"></iconify-icon>
+                </div>
+                <h3 class="text-xl font-semibold mb-3">Paper Class — FREE</h3>
+                <p class="text-neutral-400 text-sm leading-relaxed">Paper classes are completely free for everyone. Past paper discussions with smart board, no extra charges.</p>
+                <div class="mt-4 px-3 py-1.5 bg-cyan-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-cyan-400">TOTAL FREE • ALL STUDENTS</span></div>
+            </div>
+        </div>
+
+        <!-- Tute & Materials -->
+        <div class="text-center mb-12">
+            <h3 class="text-2xl sm:text-3xl font-bold">Premium <span class="gradient-text">Tute & Materials</span></h3>
+            <p class="text-neutral-400 mt-2">Professional quality study materials — designed to last beyond the exam</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:book-marked" width="32" class="text-brand-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Theory Tute</h4>
+                <p class="text-xs text-neutral-500">Per lesson, content-rich</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:user-check" width="32" class="text-yellow-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Teacher Guide</h4>
+                <p class="text-xs text-neutral-500">Included with theory</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:file-text" width="32" class="text-green-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Past Paper Book</h4>
+                <p class="text-xs text-neutral-500">Sinhala & English medium</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:list-checks" width="32" class="text-purple-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Lesson-wise Papers</h4>
+                <p class="text-xs text-neutral-500">Past papers per lesson</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:repeat" width="32" class="text-blue-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Revision Papers</h4>
+                <p class="text-xs text-neutral-500">Sent separately</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:calendar-days" width="32" class="text-pink-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Day-before Note</h4>
+                <p class="text-xs text-neutral-500">For class day only</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:help-circle" width="32" class="text-orange-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Daily Quiz</h4>
+                <p class="text-xs text-neutral-500">Every class day</p>
+            </div>
+            <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 text-center">
+                <iconify-icon icon="lucide:download" width="32" class="text-cyan-400 mb-3"></iconify-icon>
+                <h4 class="font-semibold mb-1">Free PDF</h4>
+                <p class="text-xs text-neutral-500">All materials on website</p>
+            </div>
+        </div>
+
+        <!-- Tute Quality Box -->
+        <div class="bg-[#111111] rounded-3xl p-8 border border-white/5">
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2"><iconify-icon icon="lucide:printer" width="24" class="text-brand-400"></iconify-icon> Premium Tute Quality</h3>
+            <div class="grid sm:grid-cols-2 gap-6">
+                <div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Black & White premium printing on page board quality paper</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Cover: Clear Black, Red & White — clean premium look</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>No fill-in-the-blanks — can self-study without attending class</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Content-rich, unnecessary parts removed, exam-relevant only</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Free PDF on website/Telegram for all materials</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Printed copies delivered home at lower than market price</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>Monthly fee-paying students get everything FREE to home</li>
+                        <li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="16" class="text-brand-400 mt-0.5 flex-shrink-0"></iconify-icon>O/L & A/L GIT exam free classes + free tute/paper PDF</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SUPPORT & HOTLINE ==================== -->
+<section class="relative py-24 bg-[#111111] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-green-500 tracking-wider uppercase">Always There For You</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">24/7 <span class="text-green-400">Hotline Support</span></h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:message-circle" width="22" class="text-green-400"></iconify-icon></div>
+                        <div><div class="font-semibold mb-1">Instant Replies</div><p class="text-sm text-neutral-400">Telegram or WhatsApp message → reply within <span class="text-green-400 font-semibold">10 minutes</span>, any time of day</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:phone-call" width="22" class="text-green-400"></iconify-icon></div>
+                        <div><div class="font-semibold mb-1">Call Answered in 2 Rings</div><p class="text-sm text-neutral-400">Any time, any day. If cut — <span class="text-green-400 font-semibold">callback from hotline</span> immediately</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:shield-check" width="22" class="text-green-400"></iconify-icon></div>
+                        <div><div class="font-semibold mb-1">Total Free</div><p class="text-sm text-neutral-400">Ask anything about A/L ICT — no charge, no limit. Same number since 2016</p></div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:hash" width="22" class="text-green-400"></iconify-icon></div>
+                        <div><div class="font-semibold mb-1">One Number — Since 2016</div><p class="text-sm text-neutral-400">No changing numbers. One number for everything. Easy to remember.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <div class="bg-[#0a0a0a] rounded-3xl border border-green-500/20 p-10 text-center max-w-sm w-full glow-green" style="box-shadow:0 0 40px rgba(34,197,94,0.15)">
+                    <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <iconify-icon icon="lucide:phone" width="40" class="text-green-400"></iconify-icon>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2">24/7 Hotline</h3>
+                    <p class="text-neutral-400 text-sm mb-6">Call or message anytime</p>
+                    <a href="tel:0714555513" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all hover:scale-105 text-lg">
+                        <iconify-icon icon="lucide:phone-call" width="22"></iconify-icon> 071 455 5513
+                    </a>
+                    <p class="text-xs text-neutral-600 mt-4">Same number since 2016 • Total Free</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== WEBSITE & APP ==================== -->
+<section class="relative py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-blue-500 tracking-wider uppercase">Technology</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">Website & <span class="text-blue-400">App</span></h2>
+            <p class="text-neutral-400 max-w-2xl mx-auto">Hand-crafted website with premium features — app launching soon with even more</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:log-in" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Easy Login</h3>
+                <p class="text-sm text-neutral-400">Register with phone number → login with phone + password. Forgot password? Reset available.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:play-circle" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">My Lesson</h3>
+                <p class="text-sm text-neutral-400">All your recordings in one place. Never removed. 8K quality, 4× speed, cast to TV, full/pip screen.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:bell" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Notifications</h3>
+                <p class="text-sm text-neutral-400">Payment approval, recording attached, tute posted — all notified. Important notices displayed full screen.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:layers" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Batch System</h3>
+                <p class="text-sm text-neutral-400">3 batches with details: year, months, lesson name, class time, tute info, fees. Card/bank transfer payment upload.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:gift" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Free Future Batches</h3>
+                <p class="text-sm text-neutral-400">2026 batch students can attend 2027, 2028 live classes + recordings totally free. Batch value increases every year.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:shopping-bag" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Tute & Paper Store</h3>
+                <p class="text-sm text-neutral-400">Buy printed tutes, past papers, lesson-wise papers. Free PDF always available. Fee-paying students get free delivery.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:video" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">AL Video Module</h3>
+                <p class="text-sm text-neutral-400">Buy individual lesson videos. Always updated from the latest batch. O/L & A/L GIT free classes + free PDFs.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-blue-500/30">
+                <iconify-icon icon="lucide:user" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Profile Management</h3>
+                <p class="text-sm text-neutral-400">View/edit registration details, delete account, logout. All under your control.</p>
+            </div>
+            <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-brand-600/20">
+                <iconify-icon icon="lucide:rocket" width="28" class="text-brand-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">App Coming Soon!</h3>
+                <p class="text-sm text-neutral-400">Mobile app launching soon with even more features. Stay tuned!</p>
+            </div>
+        </div>
+        <!-- New Course -->
+        <div class="mt-12 bg-gradient-to-r from-brand-600/10 to-yellow-500/10 border border-brand-600/20 rounded-3xl p-8 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/20 rounded-full mb-4">
+                <iconify-icon icon="lucide:zap" width="16" class="text-brand-400"></iconify-icon>
+                <span class="text-sm font-bold text-brand-400">NEW COURSE</span>
+            </div>
+            <h3 class="text-2xl sm:text-3xl font-bold mb-3">High Speed <span class="gradient-text">Revision</span></h3>
+            <p class="text-neutral-400 max-w-lg mx-auto">A brand new serious revision course has started — designed for maximum exam preparation at high speed. Enroll now!</p>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== STUDENT GROUPS ==================== -->
+<section class="relative py-24 bg-[#111111]">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-blue-500 tracking-wider uppercase">Community</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">Student <span class="text-blue-400">Batch Groups</span></h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:send" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Telegram Groups</h3>
+                <p class="text-sm text-neutral-400">1 group per batch. Daily quiz, all PDFs, zoom links posted. Fee-paying students get live-now button access.</p>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:megaphone" width="28" class="text-yellow-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Announcement Channels</h3>
+                <p class="text-sm text-neutral-400">2 Telegram channels — A/L & O/L. Important announcements for all batches in one place.</p>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:youtube" width="28" class="text-red-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Free Monthly Live</h3>
+                <p class="text-sm text-neutral-400">1st of every month — free YouTube live class. Anyone can watch. Starting a new lesson? It's free for everyone.</p>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:lock-open" width="28" class="text-green-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">After Exam</h3>
+                <p class="text-sm text-neutral-400">A/L exam done? Group opens for students to chat — 1 day at a time. Stay connected with batch mates.</p>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:shield" width="28" class="text-purple-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Clean Groups</h3>
+                <p class="text-sm text-neutral-400">No spam, no unnecessary content. Only what students need. Admin-moderated quality.</p>
+            </div>
+            <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                <iconify-icon icon="lucide:facebook" width="28" class="text-blue-300 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">FB Student Group</h3>
+                <p class="text-sm text-neutral-400">Active Facebook group — students share, learn, have fun. Admin-approved posts only. Quality maintained.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SAGA EVENT ==================== -->
+<section id="saga" class="relative py-24 bg-[#0a0a0a] overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-600/5 via-transparent to-yellow-500/5"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-brand-600/5 rounded-full rotate-glow"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-full mb-6">
+                    <iconify-icon icon="lucide:zap" width="16" class="text-brand-400"></iconify-icon>
+                    <span class="text-sm font-semibold text-brand-400">THE BIGGEST EDUCATIONAL EVENT</span>
+                </div>
+                <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight mb-4">
+                    <span class="gradient-text">SAGA</span>
+                </h2>
+                <p class="text-xl font-light text-neutral-300 mb-6">The Biggest Educational Event in Sri Lanka</p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:sun" width="16" class="text-yellow-400"></iconify-icon></div>
+                        <div><div class="font-semibold">8AM - 2PM: Annual Celebration</div><div class="text-sm text-neutral-500">Awards, DJ, educational hot spots, Avurudu games</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-brand-600/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:music" width="16" class="text-brand-400"></iconify-icon></div>
+                        <div><div class="font-semibold">3PM - 10PM: Musical Show</div><div class="text-sm text-neutral-500">Original artists, Lanka's top band, famous creators, popular teachers</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:ticket" width="16" class="text-green-400"></iconify-icon></div>
+                        <div><div class="font-semibold">FREE for Class Students</div><div class="text-sm text-neutral-500">PickMe discount 50%. Non-students can enter before 11AM. 15,000+ crowd!</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:shield-check" width="16" class="text-blue-400"></iconify-icon></div>
+                        <div><div class="font-semibold">Maximum Security</div><div class="text-sm text-neutral-500">Police + staff outside, 100-150 bouncers inside. Strict rules. Code Red & Black. Toilet facilities available.</div></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:camera" width="16" class="text-purple-400"></iconify-icon></div>
+                        <div><div class="font-semibold">100+ Photographers • Digital Screen Stage</div><div class="text-sm text-neutral-500">Food/drinks stores, student business opportunities, t-shirt sales</div></div>
+                    </div>
+                </div>
+                <div class="bg-brand-600/5 border border-brand-600/20 rounded-2xl p-5">
+                    <p class="text-brand-300 text-sm font-medium">💰 Total cost borne entirely by Ravindu Sir — 2+ Crores invested. Free for all class students. The ultimate gift for students.</p>
+                </div>
+            </div>
+            <!-- SAGA Visual -->
+            <div class="relative flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="bg-[#111111] rounded-3xl border border-brand-600/20 overflow-hidden shadow-2xl glow-red">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/saga-concert-stage/500/300.jpg" alt="SAGA Event" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-brand-900/30 to-transparent"></div>
+                        </div>
+                        <div class="p-8 -mt-8 relative">
+                            <div class="text-5xl font-black gradient-text mb-2">SAGA</div>
+                            <p class="text-lg font-semibold text-white mb-1">The Biggest Educational Event</p>
+                            <p class="text-sm text-neutral-500 mb-4">15,000+ Crowd • By Ravindu Sir</p>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                                    <iconify-icon icon="lucide:sun" width="20" class="text-yellow-400 mb-1"></iconify-icon>
+                                    <div class="text-xs text-neutral-400">8AM-2PM</div>
+                                    <div class="text-xs text-neutral-500">Celebration</div>
+                                </div>
+                                <div class="bg-white/5 rounded-xl p-3 text-center border border-white/5">
+                                    <iconify-icon icon="lucide:music" width="20" class="text-brand-400 mb-1"></iconify-icon>
+                                    <div class="text-xs text-neutral-400">3PM-10PM</div>
+                                    <div class="text-xs text-neutral-500">Musical Show</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="absolute -top-4 -right-4 bg-yellow-500 text-black rounded-2xl px-4 py-3 shadow-lg float-anim font-bold" style="box-shadow:0 0 30px rgba(251,191,36,0.3)">
+                        <div class="flex items-center gap-2"><iconify-icon icon="lucide:crown" width="18"></iconify-icon><span class="text-sm">#1 EVENT</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section class="relative py-24 bg-[#111111] border-y border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Extra Services</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">Beyond <span class="gradient-text">The Classroom</span></h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:graduation-cap" width="28" class="text-brand-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Campus Help Video + Handbook</h3>
+                <p class="text-sm text-neutral-400">Free printed campus handbook sent home for exam-completed students with campus guidance video.</p>
+            </div>
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:bar-chart-3" width="28" class="text-yellow-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Result Sheet Book</h3>
+                <p class="text-sm text-neutral-400">Printed result sheet book sent free to home for current students.</p>
+            </div>
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:map-pin" width="28" class="text-green-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Paper Centers</h3>
+                <p class="text-sm text-neutral-400">Multiple paper centers across cities, starting 2 months before exam. Practical totally free.</p>
+            </div>
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:brain" width="28" class="text-purple-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Main Paper Prediction</h3>
+                <p class="text-sm text-neutral-400">Ravindu Sir's main paper — predicted island 1st rank. Exam-level questions with accurate predictions.</p>
+            </div>
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:globe" width="28" class="text-blue-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Free GIT Classes</h3>
+                <p class="text-sm text-neutral-400">O/L & A/L GIT exam — totally free live classes + free tute & paper PDFs.</p>
+            </div>
+            <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                <iconify-icon icon="lucide:heart" width="28" class="text-red-400 mb-4"></iconify-icon>
+                <h3 class="font-semibold mb-2">Maximum Effort</h3>
+                <p class="text-sm text-neutral-400">Sir tries his maximum for everything. No personal events during class time. Students always come first.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FREE RESOURCES ==================== -->
+<section id="resources" class="relative py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Free Resources</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">Free <span class="gradient-text">Study Materials</span></h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+            <button onclick="switchTab('ol')" class="resource-tab active px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="ol">O/L ICT</button>
+            <button onclick="switchTab('al')" class="resource-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="al">A/L ICT</button>
+            <button onclick="switchTab('past')" class="resource-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="past">Past Papers</button>
+            <button onclick="switchTab('git')" class="resource-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="git">GIT</button>
+        </div>
+        <div id="tab-ol" class="tab-content active">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:file-text" width="24" class="text-red-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">O/L ICT Syllabus</h3>
+                    <p class="text-neutral-500 text-sm mb-4">Complete syllabus guide with all topics.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:code" width="24" class="text-blue-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">HTML & CSS Notes</h3>
+                    <p class="text-neutral-500 text-sm mb-4">Beginner-friendly with practical examples.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:database" width="24" class="text-purple-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">Database Notes</h3>
+                    <p class="text-neutral-500 text-sm mb-4">SQL and Access for O/L students.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+            </div>
+        </div>
+        <div id="tab-al" class="tab-content">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:cpu" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">A/L ICT Syllabus 2025</h3>
+                    <p class="text-neutral-500 text-sm mb-4">Complete A/L syllabus coverage.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:terminal" width="24" class="text-yellow-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">Python Programming</h3>
+                    <p class="text-neutral-500 text-sm mb-4">Exam-focused Python guide.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:network" width="24" class="text-green-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE PDF</span></div>
+                    <h3 class="font-semibold mb-2">Networking Concepts</h3>
+                    <p class="text-neutral-500 text-sm mb-4">OSI, TCP/IP explained in depth.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+            </div>
+        </div>
+        <div id="tab-past" class="tab-content">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2024</span></div>
+                    <h3 class="font-semibold mb-2">O/L 2024 Past Paper</h3>
+                    <p class="text-neutral-500 text-sm mb-4">With official marking scheme.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2023</span></div>
+                    <h3 class="font-semibold mb-2">O/L 2023 Past Paper</h3>
+                    <p class="text-neutral-500 text-sm mb-4">Detailed answer explanations.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30">
+                    <div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2022</span></div>
+                    <h3 class="font-semibold mb-2">A/L 2022 Past Paper</h3>
+                    <p class="text-neutral-500 text-sm mb-4">With marking scheme.</p>
+                    <button onclick="showToast('Download starting...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon> Download PDF</button>
+                </div>
+            </div>
+        </div>
+        <div id="tab-git" class="tab-content">
+            <div class="bg-[#111111] rounded-2xl p-8 border border-brand-600/20 text-center">
+                <iconify-icon icon="lucide:globe" width="48" class="text-brand-400 mb-4"></iconify-icon>
+                <h3 class="text-xl font-bold mb-2">O/L & A/L GIT — Total Free</h3>
+                <p class="text-neutral-400 text-sm mb-4">Free live classes + free tute & paper PDFs for GIT exam</p>
+                <a href="https://ictfromabc.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105"><iconify-icon icon="lucide:external-link" width="16"></iconify-icon> Access on ictfromabc.com</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== LOGIN ==================== -->
+<section id="login" class="relative py-24 bg-[#111111]">
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-600/30 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[500px]">
+            <div>
+                <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Student Portal</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-6">Login to <span class="gradient-text">ictfromabc.com</span></h2>
+                <p class="text-neutral-400 leading-relaxed mb-8">Access unlimited recordings, premium tutes, daily quizzes, and your personal dashboard.</p>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-center gap-4"><div class="w-10 h-10 bg-brand-600/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:infinity" width="18" class="text-brand-400"></iconify-icon></div><div><div class="font-semibold text-sm">Unlimited Recordings</div><div class="text-xs text-neutral-500">Never expire • 8K quality • 4× speed</div></div></div>
+                    <div class="flex items-center gap-4"><div class="w-10 h-10 bg-brand-600/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:book-open" width="18" class="text-brand-400"></iconify-icon></div><div><div class="font-semibold text-sm">Free Tute PDF</div><div class="text-xs text-neutral-500">All materials available for download</div></div></div>
+                    <div class="flex items-center gap-4"><div class="w-10 h-10 bg-brand-600/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:phone-call" width="18" class="text-brand-400"></iconify-icon></div><div><div class="font-semibold text-sm">24/7 Hotline</div><div class="text-xs text-neutral-500">071 455 5513 — always available</div></div></div>
+                </div>
+            </div>
+            <div class="flex justify-center lg:justify-end">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -right-3 top-0 bottom-0 w-2 bg-brand-600 rounded-full hidden lg:block"></div>
+                    <div class="bg-[#0a0a0a] rounded-3xl border border-white/10 p-8 shadow-2xl">
+                        <div class="flex items-center gap-2 mb-6">
+                            <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-bold text-white text-lg">A</div>
+                            <span class="text-xl font-bold">ict<span class="text-brand-500">from</span>abc</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">Enter Your Phone Number</h3>
+                        <p class="text-neutral-500 text-sm mb-6">Sign in or create account</p>
+                        <form id="loginForm" action="https://ictfromabc.com" method="GET">
+                            <div class="mb-5">
+                                <label class="block text-sm font-medium text-neutral-300 mb-2">Phone Number</label>
+                                <div class="flex">
+                                    <div class="flex items-center gap-1 px-3 bg-white/5 border border-white/10 rounded-l-xl border-r-0 text-sm text-neutral-400"><span>🇱🇰</span> +94</div>
+                                    <input type="tel" id="phoneInput" placeholder="7X XXX XXXX" class="flex-1 px-4 py-3.5 bg-white/5 border border-white/10 rounded-r-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-[1.02] active:scale-95 glow-red flex items-center justify-center gap-2"><iconify-icon icon="lucide:log-in" width="20"></iconify-icon> Continue</button>
+                        </form>
+                        <div class="mt-4 text-center"><p class="text-neutral-500 text-sm">Don't have an account? <a href="https://ictfromabc.com" target="_blank" class="text-brand-400 hover:text-brand-300 font-medium">Create Account</a></p></div>
+                        <div class="flex items-center gap-4 my-5"><div class="flex-1 h-px bg-white/10"></div><span class="text-xs text-neutral-600">or</span><div class="flex-1 h-px bg-white/10"></div></div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <a href="https://ictfromabc.com" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-sm font-medium"><iconify-icon icon="logos:google-icon" width="18"></iconify-icon> Google</a>
+                            <a href="https://ictfromabc.com" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-sm font-medium"><iconify-icon icon="lucide:facebook" width="18" class="text-blue-400"></iconify-icon> Facebook</a>
+                        </div>
+                        <div class="flex items-center justify-center gap-4 mt-5">
+                            <a href="#resources" class="text-xs text-neutral-500 hover:text-brand-400 transition-colors">Past Papers</a>
+                            <span class="text-neutral-700">•</span>
+                            <a href="#about" class="text-xs text-neutral-500 hover:text-brand-400 transition-colors">About Us</a>
+                            <span class="text-neutral-700">•</span>
+                            <a href="#contact" class="text-xs text-neutral-500 hover:text-brand-400 transition-colors">Contact</a>
+                        </div>
+                    </div>
+                    <p class="text-center text-xs text-neutral-600 mt-4">© 2024 ictfromabc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact" class="relative py-24 bg-[#0a0a0a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Contact</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-4">Get In <span class="gradient-text">Touch</span></h2>
+        </div>
+        <div class="grid lg:grid-cols-5 gap-12">
+            <div class="lg:col-span-2 space-y-5">
+                <a href="tel:0714555513" class="bg-[#111111] rounded-2xl p-6 border border-green-500/20 hover:border-green-500/40 transition-colors block">
+                    <div class="flex items-start gap-4"><div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:phone-call" width="22" class="text-green-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">24/7 Hotline</h3><p class="text-green-400 text-sm font-bold">071 455 5513</p><p class="text-xs text-neutral-500 mt-1">Same number since 2016</p></div></div>
+                </a>
+                <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/20 transition-colors">
+                    <div class="flex items-start gap-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:globe" width="22" class="text-brand-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Website</h3><p class="text-neutral-400 text-sm">ictfromabc.com</p></div></div>
+                </div>
+                <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/20 transition-colors">
+                    <div class="flex items-start gap-4"><div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:send" width="22" class="text-blue-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Telegram</h3><p class="text-neutral-400 text-sm">@ictfromabc</p></div></div>
+                </div>
+                <div class="bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/20 transition-colors">
+                    <div class="flex items-start gap-4"><div class="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:instagram" width="22" class="text-pink-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Social Media</h3><p class="text-neutral-400 text-sm">@ictfromabc on all platforms</p></div></div>
+                </div>
+            </div>
+            <div class="lg:col-span-3">
+                <form id="contactForm" class="bg-[#111111] rounded-3xl border border-white/5 p-8">
+                    <div class="grid sm:grid-cols-2 gap-5 mb-5">
+                        <div><label class="block text-sm font-medium text-neutral-300 mb-2">Name</label><input type="text" placeholder="Your name" class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required></div>
+                        <div><label class="block text-sm font-medium text-neutral-300 mb-2">Email</label><input type="email" placeholder="your@email.com" class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required></div>
+                    </div>
+                    <div class="mb-5"><label class="block text-sm font-medium text-neutral-300 mb-2">Subject</label>
+                        <select class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-neutral-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all appearance-none"><option>Select subject</option><option>A/L ICT Question</option><option>O/L ICT Question</option><option>SAGA Event</option><option>High Speed Revision</option><option>Account Issue</option><option>Other</option></select>
+                    </div>
+                    <div class="mb-6"><label class="block text-sm font-medium text-neutral-300 mb-2">Message</label><textarea rows="5" placeholder="Type your message..." class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all resize-none" required></textarea></div>
+                    <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 glow-red flex items-center justify-center gap-2"><iconify-icon icon="lucide:send" width="18"></iconify-icon> Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="relative py-16 bg-[#0a0a0a] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="sm:col-span-2 lg:col-span-1">
+                <a href="#home" class="flex items-center gap-2 mb-4"><div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-bold text-white text-lg">A</div><span class="text-xl font-bold">ict<span class="text-brand-500">from</span>abc</span></a>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-2">The Most Trusted Name in A/L ICT Education</p>
+                <p class="text-neutral-600 text-xs mb-4">By Ravindu Bandaranayake • Since 2017</p>
+                <div class="flex items-center gap-3">
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all border border-white/5"><iconify-icon icon="lucide:facebook" width="18"></iconify-icon></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all border border-white/5"><iconify-icon icon="lucide:youtube" width="18"></iconify-icon></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all border border-white/5"><iconify-icon icon="lucide:instagram" width="18"></iconify-icon></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all border border-white/5"><iconify-icon icon="lucide:send" width="18"></iconify-icon></a>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-semibold text-white mb-4">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="#home" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">Home</a></li>
+                    <li><a href="#about" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">About Sir</a></li>
+                    <li><a href="#results" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">2025 Results</a></li>
+                    <li><a href="#saga" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">SAGA Event</a></li>
+                    <li><a href="#contact" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-white mb-4">Resources</h3>
+                <ul class="space-y-3">
+                    <li><a href="#resources" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">O/L ICT</a></li>
+                    <li><a href="#resources" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">A/L ICT</a></li>
+                    <li><a href="#resources" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">Past Papers</a></li>
+                    <li><a href="#resources" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">GIT Free</a></li>
+                    <li><a href="#features" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">Unlimited Recordings</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-semibold text-white mb-4">Contact</h3>
+                <ul class="space-y-3">
+                    <li><a href="tel:0714555513" class="text-green-400 hover:text-green-300 text-sm font-semibold transition-colors">📞 071 455 5513</a></li>
+                    <li><a href="https://ictfromabc.com" target="_blank" class="text-neutral-500 hover:text-brand-400 text-sm transition-colors">ictfromabc.com</a></li>
+                    <li><span class="text-neutral-500 text-sm">@ictfromabc</span></li>
+                    <li><span class="text-neutral-600 text-xs">24/7 Hotline • Since 2016</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-neutral-600 text-sm">© 2024 ictfromabc by Ravindu Bandaranayake. All rights reserved.</p>
+            <p class="text-neutral-600 text-sm">Made with <span class="text-brand-500">❤</span> for Sri Lankan Students</p>
+        </div>
+    </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 right-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-300">
+    <div class="bg-[#111111] border border-brand-600/30 rounded-2xl px-6 py-4 shadow-2xl flex items-center gap-3 max-w-sm">
+        <div class="w-8 h-8 bg-brand-600/20 rounded-full flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="16" class="text-brand-400"></iconify-icon></div>
+        <span id="toastMessage" class="text-sm text-white font-medium"></span>
+    </div>
+</div>
+
+<!-- SCROLL TO TOP -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-brand-600 hover:bg-brand-500 text-white rounded-xl shadow-lg transition-all hover:scale-110 active:scale-95 opacity-0 pointer-events-none"><iconify-icon icon="lucide:arrow-up" width="22"></iconify-icon></button>
+
+<script>
+// Theme Toggle
+const html=document.documentElement,themeToggle=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon');
+let isDark=true;
+themeToggle.addEventListener('click',()=>{
+    isDark=!isDark;
+    if(isDark){html.classList.add('dark');document.body.style.background='';document.body.style.color='';themeIcon.setAttribute('icon','lucide:sun');themeIcon.classList.add('text-yellow-400');themeIcon.classList.remove('text-brand-600');document.getElementById('navbar').style.background='';showToast('Dark mode enabled')}
+    else{html.classList.remove('dark');document.body.style.background='#f5f5f5';document.body.style.color='#171717';themeIcon.setAttribute('icon','lucide:moon');themeIcon.classList.remove('text-yellow-400');themeIcon.classList.add('text-brand-600');document.getElementById('navbar').style.background='rgba(255,255,255,0.85)';showToast('Light mode enabled')}
+});
+
+// Mobile Menu
+const mm=document.getElementById('mobileMenu'),mo=document.getElementById('mobileOverlay');
+document.getElementById('mobileMenuBtn').addEventListener('click',()=>{mm.classList.add('active');mo.classList.remove('hidden');document.body.style.overflow='hidden'});
+function closeMM(){mm.classList.remove('active');mo.classList.add('hidden');document.body.style.overflow=''}
+document.getElementById('mobileMenuClose').addEventListener('click',closeMM);
+mo.addEventListener('click',closeMM);
+document.querySelectorAll('.mobile-nav').forEach(l=>l.addEventListener('click',closeMM));
+
+// Tabs
+function switchTab(t){document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.resource-tab').forEach(b=>b.classList.remove('active'));document.getElementById('tab-'+t).classList.add('active');document.querySelector(`[data-tab="${t}"]`).classList.add('active');styleTabs()}
+const styleTabs=()=>{document.querySelectorAll('.resource-tab').forEach(t=>{if(t.classList.contains('active')){t.style.background='#dc2626';t.style.color='#fff'}else{t.style.background='rgba(255,255,255,0.05)';t.style.color='#a3a3a3'}})};
+styleTabs();
+
+// Toast
+function showToast(m){const t=document.getElementById('toast'),tm=document.getElementById('toastMessage');tm.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(20px)';t.style.opacity='0'},3000)}
+
+// Contact Form
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();showToast('Message sent! We\'ll reply within 10 minutes.');this.reset()});
+
+// Login Form
+document.getElementById('loginForm').addEventListener('submit',function(e){if(document.getElementById('phoneInput').value.length<8){e.preventDefault();showToast('Please enter a valid phone number')}});
+
+// Scroll Top
+const stb=document.getElementById('scrollTopBtn');
+window.addEventListener('scroll',()=>{stb.style.opacity=window.scrollY>500?'1':'0';stb.style.pointerEvents=window.scrollY>500?'auto':'none';document.getElementById('navbar').classList.toggle('shadow-lg',window.scrollY>50)});
+
+// Active Nav
+const sections=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{let c='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)c=s.id});document.querySelectorAll('.nav-link').forEach(l=>{l.classList.toggle('text-brand-400',l.getAttribute('href')==='#'+c);l.classList.toggle('text-neutral-300',l.getAttribute('href')!=='#'+c)})});
+
+// Scroll Reveal
+const ro=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){en.target.style.opacity='1';en.target.style.transform='translateY(0)'}})},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.card-hover').forEach(c=>{c.style.opacity='0';c.style.transform='translateY(20px)';c.style.transition='opacity 0.6s ease, transform 0.6s ease';ro.observe(c)});
+</script>
+</body>
+</html>
