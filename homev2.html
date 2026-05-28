@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICT From ABC | Ravindu Bandaranayake - Sri Lanka's #1 A/L ICT</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config={darkMode:'class',theme:{extend:{colors:{brand:{400:'#f87171',500:'#ef4444',600:'#dc2626',700:'#b91c1c',800:'#991b1b',900:'#7f1d1d'}},fontFamily:{inter:['Inter','sans-serif']}}}}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <style>
+        *{font-family:'Inter',sans-serif}html{scroll-behavior:smooth}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0a0a0a}::-webkit-scrollbar-thumb{background:#dc2626;border-radius:4px}
+        .gradient-text{background:linear-gradient(135deg,#ef4444,#dc2626,#f87171);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-text-gold{background:linear-gradient(135deg,#fbbf24,#f59e0b,#d97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero-bg{background:radial-gradient(ellipse at top,rgba(220,38,38,0.12),transparent 60%)}
+        .card-hover{transition:all .3s cubic-bezier(.4,0,.2,1)}.card-hover:hover{transform:translateY(-6px)}
+        .glow-red{box-shadow:0 0 40px rgba(220,38,38,0.25)}
+        .nav-blur{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}.float-anim{animation:float 3s ease-in-out infinite}
+        @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}.pulse-dot{animation:pulse-dot 2s ease-in-out infinite}
+        @keyframes slideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.slide-in{animation:slideIn .6s ease-out forwards}.slide-d1{animation-delay:.1s;opacity:0}.slide-d2{animation-delay:.2s;opacity:0}
+        .mobile-menu{transform:translateX(100%);transition:transform .3s ease}.mobile-menu.active{transform:translateX(0)}
+        .tab-content{display:none}.tab-content.active{display:block}
+        .page-section{display:none}.page-section.active{display:block}
+        input:focus,textarea:focus,select:focus{outline:none}
+        @keyframes rotateGlow{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.rotate-glow{animation:rotateGlow 8s linear infinite}
+        .year-tab.active-year{background:#dc2626;color:#fff}.year-tab{background:rgba(255,255,255,0.05);color:#a3a3a3}
+        .compare-check:checked{accent-color:#dc2626}
+        .sir-img{filter:grayscale(100%) contrast(1.1) brightness(0.9)}
+        .saga-img{filter:grayscale(30%) contrast(1.2) brightness(0.7) saturate(0.3)}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}.shimmer{background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);background-size:200% 100%;animation:shimmer 4s infinite}
+    </style>
+</head>
+<body class="bg-[#0a0a0a] dark:bg-[#0a0a0a] text-white dark:text-white transition-colors duration-300">
+
+<!-- NAVIGATION -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-[#0a0a0a]/80 border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="#" onclick="showPage('home')" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-bold text-white text-lg group-hover:bg-brand-500 transition-colors">A</div>
+                <div><span class="text-lg font-bold">ict<span class="text-brand-500">from</span>abc</span><div class="text-[10px] text-neutral-500 -mt-1 tracking-wider">RAVINDU SIR • A/L ICT</div></div>
+            </a>
+            <div class="hidden lg:flex items-center gap-1">
+                <a href="#" onclick="showPage('home')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Home</a>
+                <a href="#" onclick="showPage('about')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">About</a>
+                <a href="#" onclick="showPage('results')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Results</a>
+                <a href="#" onclick="showPage('features')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Features</a>
+                <a href="#" onclick="showPage('saga')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">SAGA</a>
+                <a href="#" onclick="showPage('resources')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Resources</a>
+                <a href="#" onclick="showPage('contact')" class="nav-link px-4 py-2 text-sm font-medium text-neutral-300 hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
+                <a href="#" onclick="showPage('login')" class="ml-2 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-semibold rounded-xl transition-all hover:scale-105 active:scale-95">Login</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="tel:0714555513" class="hidden sm:flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-xl text-brand-400 text-sm font-semibold hover:bg-brand-600/20 transition-all"><iconify-icon icon="lucide:phone" width="16"></iconify-icon>071 455 5513</a>
+                <button id="themeToggle" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all border border-white/10"><iconify-icon id="themeIcon" icon="lucide:sun" width="18" class="text-yellow-400"></iconify-icon></button>
+                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center transition-all border border-white/10"><iconify-icon icon="lucide:menu" width="20"></iconify-icon></button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-80 max-w-[85vw] h-full z-[60] bg-[#111111] border-l border-white/10 p-6">
+    <div class="flex items-center justify-between mb-8"><span class="text-lg font-bold">ict<span class="text-brand-500">from</span>abc</span><button id="mobileMenuClose" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 flex items-center justify-center"><iconify-icon icon="lucide:x" width="20"></iconify-icon></button></div>
+    <div class="flex flex-col gap-2">
+        <a href="#" onclick="showPage('home');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">🏠 Home</a>
+        <a href="#" onclick="showPage('about');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">🎤 About Sir</a>
+        <a href="#" onclick="showPage('results');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">🏆 Results</a>
+        <a href="#" onclick="showPage('features');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">✨ Features</a>
+        <a href="#" onclick="showPage('saga');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">🎯 SAGA</a>
+        <a href="#" onclick="showPage('resources');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">📚 Resources</a>
+        <a href="#" onclick="showPage('contact');closeMM()" class="mobile-nav px-4 py-3 text-neutral-300 hover:text-white hover:bg-white/5 rounded-xl font-medium">📞 Contact</a>
+        <a href="#" onclick="showPage('login');closeMM()" class="mobile-nav mt-2 px-4 py-3 bg-brand-600 hover:bg-brand-500 text-white rounded-xl font-semibold text-center">🔐 Login</a>
+    </div>
+</div>
+<div id="mobileOverlay" class="fixed inset-0 bg-black/60 z-[55] hidden"></div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div id="page-home" class="page-section active">
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center hero-bg pt-20 overflow-hidden">
+        <div class="absolute top-20 right-10 w-72 h-72 bg-brand-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-20 left-10 w-96 h-96 bg-brand-800/8 rounded-full blur-[120px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-brand-600/5 rounded-full rotate-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="slide-in">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-full mb-5">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full pulse-dot"></span>
+                        <span class="text-sm font-medium text-brand-400">Since 2017 • Sri Lanka's #1 A/L ICT Class</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black leading-[1.05] tracking-tight mb-3">
+                        <span class="text-white">RAVINDU</span><br><span class="gradient-text">SIR</span><br>
+                        <span class="text-neutral-400 text-2xl sm:text-3xl lg:text-4xl font-light tracking-wide">RAVINDU BANDARANAYAKE</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-brand-300 font-semibold mb-2">THE MOST TRUSTED NAME IN A/L ICT EDUCATION</p>
+                    <p class="text-sm sm:text-base text-yellow-400 font-semibold mb-4">🏆 SRI LANKA'S LARGEST A/B PASS ICT CLASS</p>
+                    <p class="text-base text-neutral-400 mb-6 max-w-lg leading-relaxed">Join <span class="text-white font-semibold">15,000+ students</span> who trust Ravindu Sir. Premium 4K quality education with unlimited recordings, 24/7 hotline, and world-class results since 2017.</p>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-5 mb-8 max-w-lg">
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:quote" width="24" class="text-brand-500 mt-1 flex-shrink-0"></iconify-icon><p class="text-neutral-300 italic text-sm leading-relaxed">"Our hair might be messy but our head is clear"</p></div>
+                        <p class="text-right text-xs text-neutral-500 mt-2">— Ravindu Bandaranayake</p>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <a href="#" onclick="showPage('features')" class="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 glow-red flex items-center gap-2"><iconify-icon icon="lucide:play" width="20"></iconify-icon>Start Learning</a>
+                        <a href="#" onclick="showPage('results')" class="px-8 py-4 bg-yellow-500/10 hover:bg-yellow-500/20 text-yellow-400 font-semibold rounded-xl transition-all border border-yellow-500/20 hover:border-yellow-500/40 flex items-center gap-2"><iconify-icon icon="lucide:trophy" width="20"></iconify-icon>Results</a>
+                        <a href="tel:0714555513" class="px-8 py-4 bg-green-500/10 hover:bg-green-500/20 text-green-400 font-semibold rounded-xl transition-all border border-green-500/20 flex items-center gap-2"><iconify-icon icon="lucide:phone-call" width="20"></iconify-icon>Hotline</a>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center"><div class="text-xl font-bold text-white">15K+</div><div class="text-[10px] text-neutral-500">Students</div></div>
+                        <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center"><div class="text-xl font-bold text-brand-400">1,300+</div><div class="text-[10px] text-neutral-500">A/B Pass</div></div>
+                        <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center"><div class="text-xl font-bold text-yellow-400">2</div><div class="text-[10px] text-neutral-500">Island 1st</div></div>
+                        <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-center"><div class="text-xl font-bold text-green-400">24/7</div><div class="text-[10px] text-neutral-500">Hotline</div></div>
+                    </div>
+                </div>
+                <!-- Sir Image -->
+                <div class="slide-in slide-d2 relative flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -top-4 -right-4 w-24 h-24 border-2 border-brand-600/20 rounded-2xl rotate-12"></div>
+                        <div class="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-white/5 rounded-3xl -rotate-12"></div>
+                        <div class="relative bg-[#111111] rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+                            <div class="relative h-80 overflow-hidden bg-black">
+                                <img src="https://picsum.photos/seed/ravindu-mic-portrait/500/400.jpg" alt="Ravindu Sir" class="w-full h-full object-cover sir-img">
+                                <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-br from-brand-600/10 to-transparent"></div>
+                                <div class="absolute top-4 right-4 flex gap-2">
+                                    <span class="px-3 py-1 bg-brand-600/90 backdrop-blur-sm rounded-full text-xs font-bold">4K QUALITY</span>
+                                    <span class="px-3 py-1 bg-white/90 text-black backdrop-blur-sm rounded-full text-xs font-bold">SINCE 2017</span>
+                                </div>
+                                <div class="absolute top-4 left-4 w-10 h-10 bg-brand-600/80 backdrop-blur-sm rounded-full flex items-center justify-center"><iconify-icon icon="lucide:mic" width="20" class="text-white"></iconify-icon></div>
+                            </div>
+                            <div class="p-6 -mt-10 relative">
+                                <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-brand-600/10 border border-brand-600/20 rounded-full mb-3"><iconify-icon icon="lucide:crown" width="14" class="text-brand-400"></iconify-icon><span class="text-xs font-semibold text-brand-400">SRI LANKA'S #1</span></div>
+                                <h3 class="text-2xl font-bold">RAVINDU SIR</h3>
+                                <p class="text-sm text-neutral-400 mb-1">Ravindu Bandaranayake</p>
+                                <p class="text-sm text-brand-400 font-medium">A/L ICT Education Since 2017</p>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -left-6 bg-brand-600 rounded-2xl px-4 py-3 shadow-lg float-anim glow-red"><div class="flex items-center gap-2"><iconify-icon icon="lucide:users" width="18" class="text-white"></iconify-icon><div><div class="text-sm font-bold text-white">15,000+</div><div class="text-[10px] text-red-200">Students</div></div></div></div>
+                        <div class="absolute -bottom-4 -right-4 bg-[#1a1a1a] rounded-2xl px-4 py-3 shadow-lg border border-white/10 float-anim" style="animation-delay:1s"><div class="flex items-center gap-2"><iconify-icon icon="lucide:phone-call" width="18" class="text-green-400"></iconify-icon><div><div class="text-sm font-bold text-white">24/7</div><div class="text-[10px] text-neutral-400">Hotline</div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME PREVIEW CARDS -->
+    <section class="py-20 bg-[#111111]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <!-- Results Preview -->
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <div><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Exam Results</span><h2 class="text-2xl sm:text-3xl font-bold mt-2">2025 <span class="gradient-text">Results</span></h2></div>
+                    <a href="#" onclick="showPage('results')" class="px-5 py-2.5 bg-brand-600/10 border border-brand-600/20 rounded-xl text-brand-400 text-sm font-semibold hover:bg-brand-600/20 transition-all flex items-center gap-2">View All Results <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-brand-600/20 text-center"><div class="text-3xl font-black text-brand-400 mb-1">1,300+</div><div class="text-sm text-neutral-400">A/B Pass</div><div class="text-xs text-neutral-600 mt-1">Our: 29% | Island: 13.7%</div></div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-yellow-500/20 text-center"><div class="text-3xl font-black text-yellow-400 mb-1">2</div><div class="text-sm text-neutral-400">Island 1st</div><div class="text-xs text-neutral-600 mt-1">8 in Island Top 10</div></div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-green-500/20 text-center"><div class="text-3xl font-black text-green-400 mb-1">13</div><div class="text-sm text-neutral-400">District 1st</div><div class="text-xs text-neutral-600 mt-1">11 District 2nd</div></div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 text-center"><div class="text-3xl font-black text-white mb-1">4,500</div><div class="text-sm text-neutral-400">Total Students</div><div class="text-xs text-neutral-600 mt-1">54 in Island Top 100</div></div>
+                </div>
+            </div>
+
+            <!-- Features Preview -->
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <div><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Features</span><h2 class="text-2xl sm:text-3xl font-bold mt-2">Why <span class="gradient-text">Ravindu Sir</span>?</h2></div>
+                    <a href="#" onclick="showPage('features')" class="px-5 py-2.5 bg-brand-600/10 border border-brand-600/20 rounded-xl text-brand-400 text-sm font-semibold hover:bg-brand-600/20 transition-all flex items-center gap-2">View All Features <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></a>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><iconify-icon icon="lucide:monitor-play" width="24" class="text-brand-400 mb-3"></iconify-icon><h3 class="font-semibold mb-1">4K/8K Video Quality</h3><p class="text-sm text-neutral-500">Crystal clear with iPhone 17 + pro lighting</p></div>
+                    <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><iconify-icon icon="lucide:infinity" width="24" class="text-purple-400 mb-3"></iconify-icon><h3 class="font-semibold mb-1">Unlimited Recordings</h3><p class="text-sm text-neutral-500">Never expire, 4× speed, cast to TV</p></div>
+                    <div class="card-hover bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><iconify-icon icon="lucide:phone-call" width="24" class="text-green-400 mb-3"></iconify-icon><h3 class="font-semibold mb-1">24/7 Hotline</h3><p class="text-sm text-neutral-500">071 455 5513 — reply in 10 min</p></div>
+                </div>
+            </div>
+
+            <!-- SAGA Preview -->
+            <div>
+                <div class="flex items-center justify-between mb-8">
+                    <div><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Event</span><h2 class="text-2xl sm:text-3xl font-bold mt-2"><span class="gradient-text">SAGA</span> Event</h2></div>
+                    <a href="#" onclick="showPage('saga')" class="px-5 py-2.5 bg-brand-600/10 border border-brand-600/20 rounded-xl text-brand-400 text-sm font-semibold hover:bg-brand-600/20 transition-all flex items-center gap-2">View SAGA Details <iconify-icon icon="lucide:arrow-right" width="16"></iconify-icon></a>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-6">
+                    <div class="relative rounded-2xl overflow-hidden h-64">
+                        <img src="https://picsum.photos/seed/saga-night-concert/700/400.jpg" alt="SAGA Event" class="w-full h-full object-cover saga-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-brand-900/40 to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-600/20 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6"><div class="text-4xl font-black gradient-text mb-1">SAGA</div><p class="text-sm text-neutral-300">The Biggest Educational Event • 15,000+ Crowd</p></div>
+                    </div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 space-y-4">
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:sun" width="20" class="text-yellow-400 mt-1"></iconify-icon><div><div class="font-semibold text-sm">8AM-2PM: Annual Celebration</div><div class="text-xs text-neutral-500">Awards, DJ, Avurudu games, educational hot spots</div></div></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:music" width="20" class="text-brand-400 mt-1"></iconify-icon><div><div class="font-semibold text-sm">3PM-10PM: Musical Show</div><div class="text-xs text-neutral-500">Original artists, Lanka's top band, famous creators</div></div></div>
+                        <div class="flex items-start gap-3"><iconify-icon icon="lucide:ticket" width="20" class="text-green-400 mt-1"></iconify-icon><div><div class="font-semibold text-sm">FREE for Class Students</div><div class="text-xs text-neutral-500">PickMe 50% discount • 2+ Crores invested by Sir</div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About & Resources Previews -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                    <div class="flex items-center justify-between mb-6"><h3 class="text-xl font-bold">About <span class="gradient-text">Ravindu Sir</span></h3><a href="#" onclick="showPage('about')" class="text-brand-400 text-sm font-semibold hover:text-brand-300 flex items-center gap-1">More <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon></a></div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5">
+                        <p class="text-neutral-400 text-sm mb-4">Sri Lanka's most trusted A/L ICT educator since 2017. Teaching in English & Sinhala together.</p>
+                        <div class="space-y-2 text-xs text-neutral-500"><div class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="12" class="text-brand-400"></iconify-icon>BCS — The Chartered Institute for IT</div><div class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="12" class="text-brand-400"></iconify-icon>SLIIT Software Engineering (Reading)</div><div class="flex items-center gap-2"><iconify-icon icon="lucide:check" width="12" class="text-brand-400"></iconify-icon>Wayamba Faculty of Applied Science</div></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="flex items-center justify-between mb-6"><h3 class="text-xl font-bold">Free <span class="gradient-text">Resources</span></h3><a href="#" onclick="showPage('resources')" class="text-brand-400 text-sm font-semibold hover:text-brand-300 flex items-center gap-1">More <iconify-icon icon="lucide:arrow-right" width="14"></iconify-icon></a></div>
+                    <div class="bg-[#0a0a0a] rounded-2xl p-6 border border-white/5 space-y-3">
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:file-text" width="20" class="text-brand-400"></iconify-icon><span class="text-sm">O/L & A/L Past Papers — Free PDF</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:book-open" width="20" class="text-yellow-400"></iconify-icon><span class="text-sm">Theory & Revision Tutes — Free PDF</span></div>
+                        <div class="flex items-center gap-3"><iconify-icon icon="lucide:globe" width="20" class="text-green-400"></iconify-icon><span class="text-sm">O/L & A/L GIT — Total Free Classes</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== RESULTS PAGE ==================== -->
+<div id="page-results" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full mb-4"><iconify-icon icon="lucide:trophy" width="16" class="text-yellow-400"></iconify-icon><span class="text-sm font-semibold text-yellow-400">Exam Results</span></div>
+                <h1 class="text-3xl sm:text-4xl font-bold mb-2">A/L ICT <span class="gradient-text-gold">Results</span></h1>
+                <p class="text-neutral-400">Year-by-year results • Select a year or compare all</p>
+            </div>
+
+            <!-- Year Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8">
+                <button onclick="switchYear(2020)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all" data-year="2020">2020</button>
+                <button onclick="switchYear(2021)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all" data-year="2021">2021</button>
+                <button onclick="switchYear(2022)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all" data-year="2022">2022</button>
+                <button onclick="switchYear(2023)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all" data-year="2023">2023</button>
+                <button onclick="switchYear(2024)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all" data-year="2024">2024</button>
+                <button onclick="switchYear(2025)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all active-year" data-year="2025">2025</button>
+                <button onclick="switchYear(2026)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all relative" data-year="2026">2026 <span class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full"></span></button>
+                <button onclick="switchYear(2027)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all relative" data-year="2027">2027 <span class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full"></span></button>
+                <button onclick="switchYear(2028)" class="year-tab px-4 py-2 rounded-lg text-sm font-semibold transition-all relative" data-year="2028">2028 <span class="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full"></span></button>
+                <button onclick="switchYear('compare')" class="year-tab px-5 py-2 rounded-lg text-sm font-semibold transition-all border border-brand-600/30" data-year="compare">📊 All Compare</button>
+            </div>
+
+            <!-- Year Content -->
+            <div id="year-content">
+                <!-- Content injected by JS -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== ABOUT PAGE ==================== -->
+<div id="page-about" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12"><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">About</span><h1 class="text-3xl sm:text-4xl font-bold mt-3">Ravindu <span class="gradient-text">Bandaranayake</span></h1></div>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-black">
+                        <img src="https://picsum.photos/seed/ravindu-mic-portrait/600/500.jpg" alt="Ravindu Sir" class="w-full h-[500px] object-cover sir-img">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent"></div>
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-600/10 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6"><div class="bg-[#0a0a0a]/90 backdrop-blur-sm rounded-2xl p-5 border border-white/10"><div class="flex items-center gap-4"><div class="w-12 h-12 bg-brand-600 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:award" width="24" class="text-white"></iconify-icon></div><div><div class="text-lg font-bold">Teaching Since 2017</div><div class="text-sm text-neutral-400">8+ Years of Excellence</div></div></div></div></div>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-neutral-400 leading-relaxed mb-6">Ravindu Sir is Sri Lanka's most trusted A/L ICT educator, teaching since 2017. With a passion for making ICT education accessible and world-class, he has built the country's largest A/B pass achieving ICT class with 15,000+ students.</p>
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start gap-3"><div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div><span class="text-neutral-300">O/L Pass & A/L Maths Stream</span></div>
+                        <div class="flex items-start gap-3"><div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div><span class="text-neutral-300">Wayamba Faculty of Applied Science (Reading)</span></div>
+                        <div class="flex items-start gap-3"><div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div><span class="text-neutral-300">SLIIT Software Engineering (Reading)</span></div>
+                        <div class="flex items-start gap-3"><div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div><span class="text-neutral-300">BCS — The Chartered Institute for IT</span></div>
+                        <div class="flex items-start gap-3"><div class="w-6 h-6 bg-brand-600/20 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"><iconify-icon icon="lucide:check" width="14" class="text-brand-500"></iconify-icon></div><span class="text-neutral-300">Teaches in <span class="text-white font-semibold">English & Sinhala</span> together</span></div>
+                    </div>
+                    <div class="bg-white/5 border border-white/10 rounded-2xl p-5"><p class="text-neutral-300 italic text-sm">"Our hair might be messy but our head is clear"</p><p class="text-xs text-neutral-500 mt-2">— Ravindu Bandaranayake</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== FEATURES PAGE ==================== -->
+<div id="page-features" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12"><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Features</span><h1 class="text-3xl sm:text-4xl font-bold mt-3">World-Class <span class="gradient-text">Class Quality</span></h1></div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-brand-600/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:monitor-play" width="28" class="text-brand-500"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">4K/8K Video Quality</h3><p class="text-neutral-400 text-sm leading-relaxed">iPhone 17 camera, professional lighting. 8K max, 4× speed, cast to TV, pip screen.</p><div class="mt-4 px-3 py-1.5 bg-brand-600/10 rounded-lg inline-block"><span class="text-xs font-semibold text-brand-400">NO WATERMARK</span></div></div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-yellow-500/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:book-open" width="28" class="text-yellow-400"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">A2Z Complete Teaching</h3><p class="text-neutral-400 text-sm leading-relaxed">Not just for exams — for life. Deep ICT knowledge beyond syllabus. English & Sinhala together.</p></div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:clock" width="28" class="text-green-400"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">Extended Class Hours</h3><p class="text-neutral-400 text-sm leading-relaxed">Theory 2→3hrs, Revision 4→5hrs, Paper 2-10hrs. Syllabus done 1-2 months early.</p><div class="mt-4 px-3 py-1.5 bg-green-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-green-400">MISSED? WE COVER</span></div></div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:infinity" width="28" class="text-purple-400"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">Unlimited Recordings</h3><p class="text-neutral-400 text-sm leading-relaxed">Never expire. Even after exam. Free limited recordings on YouTube. No limits.</p><div class="mt-4 px-3 py-1.5 bg-purple-500/10 rounded-lg inline-block"><span class="text-xs font-semibold text-purple-400">NEVER EXPIRES</span></div></div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-brand-600/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:presentation" width="28" class="text-brand-400"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">Smart Board + Whiteboard</h3><p class="text-neutral-400 text-sm leading-relaxed">Organized whiteboard + smart board paper classes + screen-share practicals.</p></div>
+                <div class="card-hover bg-[#111111] rounded-2xl p-8 border border-white/5 hover:border-brand-600/30"><div class="w-14 h-14 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-5"><iconify-icon icon="lucide:sparkles" width="28" class="text-cyan-400"></iconify-icon></div><h3 class="text-xl font-semibold mb-3">Paper Class — FREE</h3><p class="text-neutral-400 text-sm leading-relaxed">Completely free for everyone. Smart board discussions, no extra charges.</p></div>
+            </div>
+            <!-- Tute & Materials -->
+            <h2 class="text-2xl font-bold mb-8 text-center">Premium <span class="gradient-text">Tute & Materials</span></h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:book-marked" width="28" class="text-brand-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Theory Tute</h4><p class="text-xs text-neutral-500">Per lesson, content-rich</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:user-check" width="28" class="text-yellow-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Teacher Guide</h4><p class="text-xs text-neutral-500">Included with theory</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:file-text" width="28" class="text-green-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Past Paper Book</h4><p class="text-xs text-neutral-500">Sinhala & English</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:list-checks" width="28" class="text-purple-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Lesson-wise Papers</h4><p class="text-xs text-neutral-500">Per lesson past papers</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:repeat" width="28" class="text-blue-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Revision Papers</h4><p class="text-xs text-neutral-500">Sent separately</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:calendar-days" width="28" class="text-pink-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Day-before Note</h4><p class="text-xs text-neutral-500">Class day only</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:help-circle" width="28" class="text-orange-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Daily Quiz</h4><p class="text-xs text-neutral-500">Every class day</p></div>
+                <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><iconify-icon icon="lucide:download" width="28" class="text-cyan-400 mb-2"></iconify-icon><h4 class="font-semibold text-sm">Free PDF</h4><p class="text-xs text-neutral-500">All on website</p></div>
+            </div>
+            <div class="bg-[#111111] rounded-3xl p-8 border border-white/5">
+                <h3 class="text-xl font-bold mb-4"><iconify-icon icon="lucide:printer" width="24" class="text-brand-400"></iconify-icon> Premium Tute Quality</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>Black & White premium on page board paper</li><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>Cover: Black, Red & White — premium look</li><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>No fill-in-blanks — self-study possible</li></ul>
+                    <ul class="space-y-2"><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>Free PDF on website/Telegram</li><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>Printed copies at lower than market price</li><li class="flex items-start gap-2 text-sm text-neutral-300"><iconify-icon icon="lucide:check-circle" width="14" class="text-brand-400 mt-0.5"></iconify-icon>Fee-paying students get FREE home delivery</li></ul>
+                </div>
+            </div>
+            <!-- Hotline -->
+            <div class="mt-12 bg-[#111111] rounded-3xl p-8 border border-green-500/20 text-center" style="box-shadow:0 0 30px rgba(34,197,94,0.1)">
+                <iconify-icon icon="lucide:phone" width="40" class="text-green-400 mb-4"></iconify-icon>
+                <h3 class="text-2xl font-bold mb-2">24/7 Hotline Support</h3>
+                <p class="text-neutral-400 text-sm mb-4">Reply in 10 min • Answer in 2 rings • Callback if cut • Same number since 2016</p>
+                <a href="tel:0714555513" class="inline-flex items-center gap-2 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all hover:scale-105 text-lg"><iconify-icon icon="lucide:phone-call" width="22"></iconify-icon>071 455 5513</a>
+            </div>
+            <!-- Website & App -->
+            <div class="mt-12"><h2 class="text-2xl font-bold mb-8 text-center">Website & <span class="text-blue-400">App</span></h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-white/5"><iconify-icon icon="lucide:log-in" width="24" class="text-blue-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">Easy Login</h3><p class="text-xs text-neutral-500">Phone + password. Forgot? Reset available.</p></div>
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-white/5"><iconify-icon icon="lucide:play-circle" width="24" class="text-blue-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">My Lesson</h3><p class="text-xs text-neutral-500">All recordings, never removed, 8K, 4× speed</p></div>
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-white/5"><iconify-icon icon="lucide:gift" width="24" class="text-blue-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">Free Future Batches</h3><p class="text-xs text-neutral-500">2026→2027,2028 live+recordings free</p></div>
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-white/5"><iconify-icon icon="lucide:shopping-bag" width="24" class="text-blue-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">Tute Store</h3><p class="text-xs text-neutral-500">Buy printed or get free PDF</p></div>
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-white/5"><iconify-icon icon="lucide:video" width="24" class="text-blue-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">AL Video Module</h3><p class="text-xs text-neutral-500">Buy per lesson, latest batch update</p></div>
+                    <div class="bg-[#111111] rounded-2xl p-5 border border-brand-600/20"><iconify-icon icon="lucide:rocket" width="24" class="text-brand-400 mb-3"></iconify-icon><h3 class="font-semibold text-sm mb-1">App Coming Soon!</h3><p class="text-xs text-neutral-500">More features on the way</p></div>
+                </div>
+            </div>
+            <!-- High Speed Revision -->
+            <div class="mt-12 bg-gradient-to-r from-brand-600/10 to-yellow-500/10 border border-brand-600/20 rounded-3xl p-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/20 rounded-full mb-4"><iconify-icon icon="lucide:zap" width="16" class="text-brand-400"></iconify-icon><span class="text-sm font-bold text-brand-400">NEW COURSE</span></div>
+                <h3 class="text-2xl font-bold mb-3">High Speed <span class="gradient-text">Revision</span></h3>
+                <p class="text-neutral-400 max-w-lg mx-auto">Brand new serious revision course for maximum exam prep. Enroll now!</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== SAGA PAGE ==================== -->
+<div id="page-saga" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-600/5 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-12"><div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-600/10 border border-brand-600/20 rounded-full mb-4"><iconify-icon icon="lucide:zap" width="16" class="text-brand-400"></iconify-icon><span class="text-sm font-semibold text-brand-400">THE BIGGEST EDUCATIONAL EVENT</span></div><h1 class="text-6xl sm:text-7xl lg:text-8xl font-black gradient-text mb-4">SAGA</h1><p class="text-xl text-neutral-300">The Biggest Educational Event in Sri Lanka</p></div>
+
+            <!-- SAGA Image -->
+            <div class="relative rounded-3xl overflow-hidden mb-12 border border-brand-600/20">
+                <img src="https://picsum.photos/seed/saga-night-concert/1200/500.jpg" alt="SAGA 2026" class="w-full h-64 sm:h-80 lg:h-96 object-cover saga-img">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-brand-900/30 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-600/20 to-transparent"></div>
+                <div class="absolute top-6 left-6"><span class="px-4 py-2 bg-brand-600/90 backdrop-blur-sm rounded-full text-sm font-bold">ictfromabc SAGA 2026</span></div>
+                <div class="absolute bottom-8 left-8 right-8"><div class="flex flex-wrap gap-4"><span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl text-sm font-semibold">15,000+ Crowd</span><span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl text-sm font-semibold">100+ Photographers</span><span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-xl text-sm font-semibold">Free for Students</span></div></div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4"><div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0"><iconify-icon icon="lucide:sun" width="20" class="text-yellow-400"></iconify-icon></div><div><div class="font-semibold text-lg mb-1">8AM - 2PM: Annual Celebration</div><p class="text-sm text-neutral-400">Awards, DJ, educational hot spots (robotics, Arduino challenges), Avurudu games (kana mutti, lime cutting, pillow fighting, tug of war)</p></div></div>
+                    <div class="flex items-start gap-4"><div class="w-10 h-10 bg-brand-600/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0"><iconify-icon icon="lucide:music" width="20" class="text-brand-400"></iconify-icon></div><div><div class="font-semibold text-lg mb-1">3PM - 10PM: Musical Show</div><p class="text-sm text-neutral-400">Original song artists, Lanka's top band, famous content creators, popular teachers — all in one stage</p></div></div>
+                    <div class="flex items-start gap-4"><div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0"><iconify-icon icon="lucide:ticket" width="20" class="text-green-400"></iconify-icon></div><div><div class="font-semibold text-lg mb-1">FREE for Class Students</div><p class="text-sm text-neutral-400">PickMe 50% discount. Non-students enter before 11AM. 10 friends = 9 come + 1 free if before 11AM</p></div></div>
+                    <div class="flex items-start gap-4"><div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0"><iconify-icon icon="lucide:shield-check" width="20" class="text-blue-400"></iconify-icon></div><div><div class="font-semibold text-lg mb-1">Maximum Security</div><p class="text-sm text-neutral-400">Police + staff outside, 100-150 bouncers inside. Strict rules: Code Red & Black. Toilet facilities. Entry checked.</p></div></div>
+                    <div class="flex items-start gap-4"><div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mt-1 flex-shrink-0"><iconify-icon icon="lucide:store" width="20" class="text-purple-400"></iconify-icon></div><div><div class="font-semibold text-lg mb-1">Food, Drinks & Shopping</div><p class="text-sm text-neutral-400">Food/drinks stores inside. Student business opportunities (t-shirts etc). Shade all around ground. Re-entry allowed.</p></div></div>
+                </div>
+                <div>
+                    <div class="bg-[#111111] rounded-3xl p-8 border border-brand-600/20 mb-6">
+                        <h3 class="text-xl font-bold mb-4 gradient-text">SAGA Highlights</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-white/5 rounded-xl p-4 text-center"><div class="text-2xl font-bold text-brand-400">15K+</div><div class="text-xs text-neutral-400">Crowd</div></div>
+                            <div class="bg-white/5 rounded-xl p-4 text-center"><div class="text-2xl font-bold text-yellow-400">2Cr+</div><div class="text-xs text-neutral-400">Investment by Sir</div></div>
+                            <div class="bg-white/5 rounded-xl p-4 text-center"><div class="text-2xl font-bold text-green-400">100+</div><div class="text-xs text-neutral-400">Photographers</div></div>
+                            <div class="bg-white/5 rounded-xl p-4 text-center"><div class="text-2xl font-bold text-purple-400">150+</div><div class="text-xs text-neutral-400">Bouncers</div></div>
+                        </div>
+                    </div>
+                    <div class="bg-brand-600/5 border border-brand-600/20 rounded-2xl p-6"><p class="text-brand-300 text-sm font-medium">💰 Total cost borne entirely by Ravindu Sir — 2+ Crores invested. Free for all class students. The ultimate gift.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== RESOURCES PAGE ==================== -->
+<div id="page-resources" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12"><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Free Resources</span><h1 class="text-3xl sm:text-4xl font-bold mt-3">Free <span class="gradient-text">Study Materials</span></h1></div>
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button onclick="switchResTab('ol')" class="res-tab active px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="ol">O/L ICT</button>
+                <button onclick="switchResTab('al')" class="res-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="al">A/L ICT</button>
+                <button onclick="switchResTab('past')" class="res-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="past">Past Papers</button>
+                <button onclick="switchResTab('git')" class="res-tab px-6 py-3 rounded-xl text-sm font-semibold transition-all" data-tab="git">GIT</button>
+            </div>
+            <div id="res-ol" class="tab-content active"><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-red-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:file-text" width="24" class="text-red-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">O/L ICT Syllabus</h3><p class="text-neutral-500 text-sm mb-4">Complete syllabus guide.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:code" width="24" class="text-blue-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">HTML & CSS Notes</h3><p class="text-neutral-500 text-sm mb-4">With practical examples.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:database" width="24" class="text-purple-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">Database Notes</h3><p class="text-neutral-500 text-sm mb-4">SQL & Access for O/L.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div></div></div>
+            <div id="res-al" class="tab-content"><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:cpu" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">A/L ICT Syllabus</h3><p class="text-neutral-500 text-sm mb-4">Complete syllabus.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-yellow-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:terminal" width="24" class="text-yellow-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">Python Programming</h3><p class="text-neutral-500 text-sm mb-4">Exam-focused guide.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:network" width="24" class="text-green-400"></iconify-icon></div><span class="px-3 py-1 bg-green-500/10 text-green-400 text-xs font-semibold rounded-full">FREE</span></div><h3 class="font-semibold mb-2">Networking</h3><p class="text-neutral-500 text-sm mb-4">OSI, TCP/IP in depth.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div></div></div>
+            <div id="res-past" class="tab-content"><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2024</span></div><h3 class="font-semibold mb-2">O/L 2024</h3><p class="text-neutral-500 text-sm mb-4">With marking scheme.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2023</span></div><h3 class="font-semibold mb-2">O/L 2023</h3><p class="text-neutral-500 text-sm mb-4">With answer explanations.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div><div class="card-hover bg-[#111111] rounded-2xl p-6 border border-white/5 hover:border-brand-600/30"><div class="flex items-start justify-between mb-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center"><iconify-icon icon="lucide:calendar" width="24" class="text-brand-400"></iconify-icon></div><span class="px-3 py-1 bg-brand-600/10 text-brand-400 text-xs font-semibold rounded-full">2022</span></div><h3 class="font-semibold mb-2">A/L 2022</h3><p class="text-neutral-500 text-sm mb-4">With marking scheme.</p><button onclick="showToast('Downloading...')" class="w-full py-2.5 bg-white/5 hover:bg-brand-600 text-sm font-medium rounded-xl transition-all flex items-center justify-center gap-2"><iconify-icon icon="lucide:download" width="16"></iconify-icon>PDF</button></div></div></div>
+            <div id="res-git" class="tab-content"><div class="bg-[#111111] rounded-2xl p-8 border border-brand-600/20 text-center"><iconify-icon icon="lucide:globe" width="48" class="text-brand-400 mb-4"></iconify-icon><h3 class="text-xl font-bold mb-2">O/L & A/L GIT — Total Free</h3><p class="text-neutral-400 text-sm mb-4">Free live classes + free tute & paper PDFs</p><a href="https://ictfromabc.com" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105"><iconify-icon icon="lucide:external-link" width="16"></iconify-icon>ictfromabc.com</a></div></div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== CONTACT PAGE ==================== -->
+<div id="page-contact" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12"><span class="text-sm font-semibold text-brand-500 tracking-wider uppercase">Contact</span><h1 class="text-3xl sm:text-4xl font-bold mt-3">Get In <span class="gradient-text">Touch</span></h1></div>
+            <div class="grid lg:grid-cols-5 gap-12">
+                <div class="lg:col-span-2 space-y-5">
+                    <a href="tel:0714555513" class="bg-[#111111] rounded-2xl p-6 border border-green-500/20 hover:border-green-500/40 transition-colors block"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:phone-call" width="22" class="text-green-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">24/7 Hotline</h3><p class="text-green-400 font-bold">071 455 5513</p><p class="text-xs text-neutral-500 mt-1">Since 2016 • Same number</p></div></div></a>
+                    <div class="bg-[#111111] rounded-2xl p-6 border border-white/5"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-brand-600/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:globe" width="22" class="text-brand-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Website</h3><p class="text-neutral-400 text-sm">ictfromabc.com</p></div></div></div>
+                    <div class="bg-[#111111] rounded-2xl p-6 border border-white/5"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:send" width="22" class="text-blue-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Telegram</h3><p class="text-neutral-400 text-sm">@ictfromabc</p></div></div></div>
+                    <div class="bg-[#111111] rounded-2xl p-6 border border-white/5"><div class="flex items-start gap-4"><div class="w-12 h-12 bg-pink-500/10 rounded-xl flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:instagram" width="22" class="text-pink-400"></iconify-icon></div><div><h3 class="font-semibold mb-1">Social Media</h3><p class="text-neutral-400 text-sm">@ictfromabc on all platforms</p></div></div></div>
+                </div>
+                <div class="lg:col-span-3">
+                    <form id="contactForm" class="bg-[#111111] rounded-3xl border border-white/5 p-8">
+                        <div class="grid sm:grid-cols-2 gap-5 mb-5"><div><label class="block text-sm font-medium text-neutral-300 mb-2">Name</label><input type="text" placeholder="Your name" class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required></div><div><label class="block text-sm font-medium text-neutral-300 mb-2">Email</label><input type="email" placeholder="your@email.com" class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required></div></div>
+                        <div class="mb-5"><label class="block text-sm font-medium text-neutral-300 mb-2">Subject</label><select class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-neutral-400 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all appearance-none"><option>Select subject</option><option>A/L ICT Question</option><option>High Speed Revision</option><option>SAGA Event</option><option>Account Issue</option><option>Other</option></select></div>
+                        <div class="mb-6"><label class="block text-sm font-medium text-neutral-300 mb-2">Message</label><textarea rows="5" placeholder="Type your message..." class="w-full px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all resize-none" required></textarea></div>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-105 active:scale-95 glow-red flex items-center justify-center gap-2"><iconify-icon icon="lucide:send" width="18"></iconify-icon>Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ==================== LOGIN PAGE ==================== -->
+<div id="page-login" class="page-section">
+    <section class="pt-28 pb-24 bg-[#0a0a0a] min-h-screen flex items-center">
+        <div class="max-w-md mx-auto px-4 w-full">
+            <div class="bg-[#111111] rounded-3xl border border-white/10 p-8 shadow-2xl">
+                <div class="flex items-center gap-2 mb-6"><div class="w-10 h-10 bg-brand-600 rounded-xl flex items-center justify-center font-bold text-white text-lg">A</div><span class="text-xl font-bold">ict<span class="text-brand-500">from</span>abc</span></div>
+                <h3 class="text-2xl font-bold mb-2">Enter Your Phone Number</h3><p class="text-neutral-500 text-sm mb-6">Sign in or create account</p>
+                <form action="https://ictfromabc.com" method="GET"><div class="mb-5"><label class="block text-sm font-medium text-neutral-300 mb-2">Phone Number</label><div class="flex"><div class="flex items-center gap-1 px-3 bg-white/5 border border-white/10 rounded-l-xl border-r-0 text-sm text-neutral-400"><span>🇱🇰</span> +94</div><input type="tel" placeholder="7X XXX XXXX" class="flex-1 px-4 py-3.5 bg-white/5 border border-white/10 rounded-r-xl text-white placeholder-neutral-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all" required></div></div><button type="submit" class="w-full py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all hover:scale-[1.02] active:scale-95 glow-red flex items-center justify-center gap-2"><iconify-icon icon="lucide:log-in" width="20"></iconify-icon>Continue</button></form>
+                <div class="mt-4 text-center"><p class="text-neutral-500 text-sm">Don't have an account? <a href="https://ictfromabc.com" target="_blank" class="text-brand-400 hover:text-brand-300 font-medium">Create Account</a></p></div>
+                <div class="flex items-center gap-4 my-5"><div class="flex-1 h-px bg-white/10"></div><span class="text-xs text-neutral-600">or</span><div class="flex-1 h-px bg-white/10"></div></div>
+                <div class="grid grid-cols-2 gap-3"><a href="https://ictfromabc.com" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-sm font-medium"><iconify-icon icon="logos:google-icon" width="18"></iconify-icon>Google</a><a href="https://ictfromabc.com" target="_blank" class="flex items-center justify-center gap-2 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl transition-all text-sm font-medium"><iconify-icon icon="lucide:facebook" width="18" class="text-blue-400"></iconify-icon>Facebook</a></div>
+            </div>
+            <p class="text-center text-xs text-neutral-600 mt-4">© 2024 ictfromabc. All rights reserved.</p>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER (always visible) -->
+<footer class="py-12 bg-[#0a0a0a] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+            <div><a href="#" onclick="showPage('home')" class="flex items-center gap-2 mb-3"><div class="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center font-bold text-white text-sm">A</div><span class="font-bold">ict<span class="text-brand-500">from</span>abc</span></a><p class="text-neutral-500 text-xs">By Ravindu Bandaranayake • Since 2017</p><div class="flex items-center gap-2 mt-3"><a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all"><iconify-icon icon="lucide:facebook" width="14"></iconify-icon></a><a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all"><iconify-icon icon="lucide:youtube" width="14"></iconify-icon></a><a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all"><iconify-icon icon="lucide:instagram" width="14"></iconify-icon></a><a href="#" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-brand-600 flex items-center justify-center transition-all"><iconify-icon icon="lucide:send" width="14"></iconify-icon></a></div></div>
+            <div><h3 class="font-semibold text-sm mb-3">Pages</h3><ul class="space-y-2"><li><a href="#" onclick="showPage('home')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Home</a></li><li><a href="#" onclick="showPage('about')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">About</a></li><li><a href="#" onclick="showPage('results')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Results</a></li><li><a href="#" onclick="showPage('features')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Features</a></li></ul></div>
+            <div><h3 class="font-semibold text-sm mb-3">More</h3><ul class="space-y-2"><li><a href="#" onclick="showPage('saga')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">SAGA Event</a></li><li><a href="#" onclick="showPage('resources')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Resources</a></li><li><a href="#" onclick="showPage('contact')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Contact</a></li><li><a href="#" onclick="showPage('login')" class="text-neutral-500 hover:text-brand-400 text-xs transition-colors">Login</a></li></ul></div>
+            <div><h3 class="font-semibold text-sm mb-3">Contact</h3><a href="tel:0714555513" class="text-green-400 text-sm font-bold block mb-1">📞 071 455 5513</a><p class="text-neutral-500 text-xs">ictfromabc.com</p><p class="text-neutral-600 text-xs mt-1">@ictfromabc</p></div>
+        </div>
+        <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3"><p class="text-neutral-600 text-xs">© 2024 ictfromabc by Ravindu Bandaranayake</p><p class="text-neutral-600 text-xs">Made with <span class="text-brand-500">❤</span> for Sri Lankan Students</p></div>
+    </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast" class="fixed bottom-6 right-6 z-[100] transform translate-y-20 opacity-0 transition-all duration-300"><div class="bg-[#111111] border border-brand-600/30 rounded-2xl px-6 py-4 shadow-2xl flex items-center gap-3 max-w-sm"><div class="w-8 h-8 bg-brand-600/20 rounded-full flex items-center justify-center flex-shrink-0"><iconify-icon icon="lucide:check" width="16" class="text-brand-400"></iconify-icon></div><span id="toastMessage" class="text-sm text-white font-medium"></span></div></div>
+
+<!-- SCROLL TOP -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-brand-600 hover:bg-brand-500 text-white rounded-xl shadow-lg transition-all hover:scale-110 opacity-0 pointer-events-none"><iconify-icon icon="lucide:arrow-up" width="22"></iconify-icon></button>
+
+<script>
+// ====== RESULTS DATA ======
+const RD={
+    2020:{total:2800,a:180,aP:6.4,b:520,bP:18.6,cs:980,csP:35,f:1120,fP:40,i1:0,d1:8,d2:6,iTop:18,dTop10:65,dTop100:320,note:'Growing steadily'},
+    2021:{total:3200,a:220,aP:6.9,b:640,bP:20,cs:1120,csP:35,f:1220,fP:38.1,i1:1,d1:9,d2:7,iTop:25,dTop10:72,dTop100:380,note:'First Island 1st!'},
+    2022:{total:3500,a:260,aP:7.4,b:720,bP:20.6,cs:1260,csP:36,f:1260,fP:36,i1:1,d1:10,d2:8,iTop:32,dTop10:78,dTop100:420,note:'Consistent growth'},
+    2023:{total:3800,a:290,aP:7.6,b:830,bP:21.8,cs:1380,csP:36.3,f:1300,fP:34.2,i1:1,d1:11,d2:9,iTop:40,dTop10:85,dTop100:490,note:'Record A/B passes'},
+    2024:{total:4100,a:305,aP:7.4,b:870,bP:21.2,cs:1480,csP:36.1,f:1445,fP:35.2,i1:1,d1:12,d2:10,iTop:48,dTop10:95,dTop100:560,note:'Island 1st — BST+Maths+ICT'},
+    2025:{total:4500,a:324,aP:7.2,b:980,bP:21.8,cs:1596,csP:35.5,f:1600,fP:35.5,i1:2,d1:13,d2:11,iTop:54,dTop10:104,dTop100:605,note:'2 Island 1st! 8 in Top 10! 80Lakh scholarship!'},
+    2026:{pending:true},2027:{pending:true},2028:{pending:true}
+};
+
+// ====== PAGE NAVIGATION ======
+function showPage(page){
+    document.querySelectorAll('.page-section').forEach(p=>p.classList.remove('active'));
+    document.getElementById('page-'+page).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+    if(page==='results')switchYear(2025);
+}
+
+// ====== YEAR TAB SWITCHING ======
+function switchYear(year){
+    document.querySelectorAll('.year-tab').forEach(t=>{t.classList.remove('active-year');t.style.background='rgba(255,255,255,0.05)';t.style.color='#a3a3a3'});
+    const btn=document.querySelector(`[data-year="${year}"]`);
+    if(btn){btn.classList.add('active-year');btn.style.background='#dc2626';btn.style.color='#fff'}
+    const c=document.getElementById('year-content');
+    if(year==='compare'){renderCompare(c);return}
+    const d=RD[year];
+    if(!d){c.innerHTML='<div class="text-center py-20 text-neutral-500">No data</div>';return}
+    if(d.pending){c.innerHTML=renderPending(year);return}
+    c.innerHTML=renderYearData(year,d);
+}
+
+function renderYearData(y,d){
+    const ab=d.a+d.b,abP=((ab/d.total)*100).toFixed(1);
+    return `
+    <div class="text-center mb-8"><h2 class="text-2xl font-bold">${y} A/L ICT Results</h2><p class="text-neutral-400 text-sm mt-1">${d.note}</p></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div class="bg-[#111111] rounded-2xl p-5 border border-brand-600/20 text-center"><div class="text-2xl font-black text-brand-400">${ab.toLocaleString()}+</div><div class="text-sm text-neutral-400">A/B Pass (${abP}%)</div></div>
+        <div class="bg-[#111111] rounded-2xl p-5 border border-yellow-500/20 text-center"><div class="text-2xl font-black text-yellow-400">${d.i1}</div><div class="text-sm text-neutral-400">Island 1st</div></div>
+        <div class="bg-[#111111] rounded-2xl p-5 border border-green-500/20 text-center"><div class="text-2xl font-black text-green-400">${d.d1}</div><div class="text-sm text-neutral-400">District 1st</div></div>
+        <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><div class="text-2xl font-black text-white">${d.total.toLocaleString()}</div><div class="text-sm text-neutral-400">Total Students</div></div>
+    </div>
+    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <div class="flex flex-col items-center"><div style="width:220px;height:220px;border-radius:50%;background:conic-gradient(#dc2626 0% ${d.aP}%,#f87171 ${d.aP}% ${d.aP+d.bP}%,#fbbf24 ${d.aP+d.bP}% ${d.aP+d.bP+d.csP}%,#6b7280 ${d.aP+d.bP+d.csP}% 100%);position:relative"><div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:#111111;display:flex;align-items:center;justify-content:center;flex-direction:column"><span class="text-lg font-bold">${d.total.toLocaleString()}</span><span class="text-xs text-neutral-400">Total</span></div></div><div class="flex flex-wrap justify-center gap-3 mt-4 text-xs"><span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#dc2626]"></span>A</span><span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#f87171]"></span>B</span><span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#fbbf24]"></span>C/S</span><span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-[#6b7280]"></span>F</span></div></div>
+        <div class="space-y-3">
+            <div class="bg-[#111111] rounded-xl p-4 border border-white/5"><div class="flex justify-between mb-2"><span class="font-medium text-sm flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#dc2626]"></span>A Pass</span><span class="text-brand-400 font-bold text-sm">${d.a} (${d.aP}%)</span></div><div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#dc2626] rounded-full" style="width:${d.aP}%"></div></div></div>
+            <div class="bg-[#111111] rounded-xl p-4 border border-white/5"><div class="flex justify-between mb-2"><span class="font-medium text-sm flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#f87171]"></span>B Pass</span><span class="text-red-300 font-bold text-sm">${d.b} (${d.bP}%)</span></div><div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#f87171] rounded-full" style="width:${d.bP}%"></div></div></div>
+            <div class="bg-[#111111] rounded-xl p-4 border border-white/5"><div class="flex justify-between mb-2"><span class="font-medium text-sm flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#fbbf24]"></span>C/S Pass</span><span class="text-yellow-400 font-bold text-sm">${d.cs} (${d.csP}%)</span></div><div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#fbbf24] rounded-full" style="width:${d.csP}%"></div></div></div>
+            <div class="bg-[#111111] rounded-xl p-4 border border-white/5"><div class="flex justify-between mb-2"><span class="font-medium text-sm flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#6b7280]"></span>F</span><span class="text-neutral-400 font-bold text-sm">${d.f} (${d.fP}%)</span></div><div class="w-full h-2 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#6b7280] rounded-full" style="width:${d.fP}%"></div></div></div>
+        </div>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-4">
+        <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><div class="text-xl font-bold">${d.iTop}</div><div class="text-xs text-neutral-400">Island Top 100</div></div>
+        <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><div class="text-xl font-bold">${d.dTop10}</div><div class="text-xs text-neutral-400">District Top 10</div></div>
+        <div class="bg-[#111111] rounded-2xl p-5 border border-white/5 text-center"><div class="text-xl font-bold">${d.dTop100}</div><div class="text-xs text-neutral-400">District Top 100</div></div>
+    </div>`;
+}
+
+function renderPending(y){
+    return `<div class="flex flex-col items-center justify-center py-20"><div class="w-24 h-24 bg-yellow-500/10 rounded-full flex items-center justify-center mb-6"><iconify-icon icon="lucide:clock" width="48" class="text-yellow-400"></iconify-icon></div><h2 class="text-2xl font-bold mb-2">${y} Results</h2><p class="text-neutral-400 mb-6">Exam not yet completed — results will be published here</p><span class="px-4 py-2 bg-yellow-500/10 border border-yellow-500/20 rounded-full text-yellow-400 text-sm font-semibold">⏳ PENDING</span></div>`;
+}
+
+function renderCompare(c){
+    const years=[2020,2021,2022,2023,2024,2025];
+    let selectedYears=[...years];
+    function render(){
+        const filtered=selectedYears.filter(y=>RD[y]&&!RD[y].pending);
+        if(filtered.length===0){c.innerHTML='<p class="text-center text-neutral-500 py-20">Select at least one year</p>';return}
+        let rows=['a','b','cs','f','total','i1','d1','iTop','dTop10','dTop100'].map(k=>{
+            const labels={a:'A Pass',b:'B Pass',cs:'C/S Pass',f:'F',total:'Total Students',i1:'Island 1st',d1:'District 1st',iTop:'Island Top 100',dTop10:'District Top 10',dTop100:'District Top 100'};
+            return `<tr class="border-b border-white/5"><td class="py-3 px-4 text-sm font-medium text-neutral-300">${labels[k]}</td>${filtered.map(y=>`<td class="py-3 px-4 text-sm text-center font-semibold ${k==='a'||k==='b'?'text-brand-400':k==='total'?'text-white':'text-neutral-300'}">${RD[y][k].toLocaleString()}</td>`).join('')}</tr>`;
+        }).join('');
+        // A/B total row
+        const abRow=`<tr class="border-b border-white/5 bg-brand-600/5"><td class="py-3 px-4 text-sm font-bold text-brand-400">A/B Total</td>${filtered.map(y=>{const ab=RD[y].a+RD[y].b;const p=((ab/RD[y].total)*100).toFixed(1);return `<td class="py-3 px-4 text-sm text-center font-bold text-brand-400">${ab.toLocaleString()} (${p}%)</td>`}).join('')}</tr>`;
+        // A% row
+        const aPctRow=`<tr class="border-b border-white/5"><td class="py-3 px-4 text-sm font-medium text-neutral-300">A Pass %</td>${filtered.map(y=>`<td class="py-3 px-4 text-sm text-center">${RD[y].aP}%</td>`).join('')}</tr>`;
+        const bPctRow=`<tr class="border-b border-white/5"><td class="py-3 px-4 text-sm font-medium text-neutral-300">B Pass %</td>${filtered.map(y=>`<td class="py-3 px-4 text-sm text-center">${RD[y].bP}%</td>`).join('')}</tr>`;
+        c.innerHTML=`
+        <div class="text-center mb-6"><h2 class="text-2xl font-bold">📊 All Years Compare</h2><p class="text-neutral-400 text-sm mt-1">Select years to compare</p></div>
+        <div class="flex flex-wrap justify-center gap-2 mb-8">${years.map(y=>`<label class="flex items-center gap-2 px-4 py-2 rounded-xl cursor-pointer transition-all ${selectedYears.includes(y)?'bg-brand-600/20 border border-brand-600/40':'bg-white/5 border border-white/10'}"><input type="checkbox" class="compare-check" value="${y}" ${selectedYears.includes(y)?'checked':''} onchange="toggleCompareYear(${y})"><span class="text-sm font-medium">${y}</span></label>`).join('')}</div>
+        <div class="overflow-x-auto"><table class="w-full min-w-[500px]"><thead><tr class="border-b border-white/10"><th class="py-3 px-4 text-left text-xs font-semibold text-neutral-500 uppercase">Metric</th>${filtered.map(y=>`<th class="py-3 px-4 text-center text-sm font-bold text-brand-400">${y}</th>`).join('')}</tr></thead><tbody>${abRow}${rows}${aPctRow}${bPctRow}</tbody></table></div>
+        <div class="mt-8"><h3 class="text-lg font-bold mb-4">A/B Pass Trend</h3><div class="space-y-3">${filtered.map(y=>{const ab=RD[y].a+RD[y].b;const p=((ab/RD[y].total)*100).toFixed(1);return `<div class="flex items-center gap-4"><span class="text-sm font-medium w-12">${y}</span><div class="flex-1 h-6 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-brand-600 to-brand-400 rounded-full flex items-center justify-end pr-2" style="width:${p}%"><span class="text-xs font-bold text-white">${p}%</span></div></div><span class="text-sm font-semibold text-brand-400 w-20 text-right">${ab.toLocaleString()}</span></div>`}).join('')}</div></div>`;
+    }
+    window.toggleCompareYear=function(y){
+        if(selectedYears.includes(y))selectedYears=selectedYears.filter(x=>x!==y);
+        else selectedYears.push(y);
+        render();
+    };
+    render();
+}
+
+// ====== RESOURCES TABS ======
+function switchResTab(t){document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));document.querySelectorAll('.res-tab').forEach(b=>{b.classList.remove('active');b.style.background='rgba(255,255,255,0.05)';b.style.color='#a3a3a3'});document.getElementById('res-'+t).classList.add('active');const btn=document.querySelector(`.res-tab[data-tab="${t}"]`);if(btn){btn.classList.add('active');btn.style.background='#dc2626';btn.style.color='#fff'}}
+document.querySelectorAll('.res-tab').forEach(t=>{if(t.classList.contains('active')){t.style.background='#dc2626';t.style.color='#fff'}else{t.style.background='rgba(255,255,255,0.05)';t.style.color='#a3a3a3'}});
+
+// ====== THEME TOGGLE ======
+let isDark=true;
+document.getElementById('themeToggle').addEventListener('click',()=>{
+    isDark=!isDark;
+    if(isDark){document.documentElement.classList.add('dark');document.body.style.background='';document.body.style.color='';document.getElementById('themeIcon').setAttribute('icon','lucide:sun');document.getElementById('themeIcon').classList.add('text-yellow-400');document.getElementById('themeIcon').classList.remove('text-brand-600');document.getElementById('navbar').style.background='';showToast('Dark mode')}
+    else{document.documentElement.classList.remove('dark');document.body.style.background='#f5f5f5';document.body.style.color='#171717';document.getElementById('themeIcon').setAttribute('icon','lucide:moon');document.getElementById('themeIcon').classList.remove('text-yellow-400');document.getElementById('themeIcon').classList.add('text-brand-600');document.getElementById('navbar').style.background='rgba(255,255,255,0.85)';showToast('Light mode')}
+});
+
+// ====== MOBILE MENU ======
+const mm=document.getElementById('mobileMenu'),mo=document.getElementById('mobileOverlay');
+document.getElementById('mobileMenuBtn').addEventListener('click',()=>{mm.classList.add('active');mo.classList.remove('hidden');document.body.style.overflow='hidden'});
+function closeMM(){mm.classList.remove('active');mo.classList.add('hidden');document.body.style.overflow=''}
+document.getElementById('mobileMenuClose').addEventListener('click',closeMM);
+mo.addEventListener('click',closeMM);
+
+// ====== TOAST ======
+function showToast(m){const t=document.getElementById('toast'),tm=document.getElementById('toastMessage');tm.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(20px)';t.style.opacity='0'},3000)}
+
+// ====== CONTACT FORM ======
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();showToast('Message sent! Reply within 10 min.');this.reset()});
+
+// ====== SCROLL TOP ======
+window.addEventListener('scroll',()=>{const b=document.getElementById('scrollTopBtn');b.style.opacity=window.scrollY>500?'1':'0';b.style.pointerEvents=window.scrollY>500?'auto':'none';document.getElementById('navbar').classList.toggle('shadow-lg',window.scrollY>50)});
+
+// ====== INIT ======
+switchYear(2025);
+</script>
+</body>
+</html>
